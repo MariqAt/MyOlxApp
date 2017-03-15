@@ -25,6 +25,13 @@
 
     </string-array>
     <string name="state_prompt">NEW</string>
+    <string name="name_app">MyOlx</string>
+    <string name="add_notice">Add notice</string>
+    <string name="archive">Archive</string>
+    <string name="active">Active</string>
+    <string name="my_notice">My Notice</string>
+    <string name="messages">Messages</string>
+    <string name="all">All</string>
     <string-array name="state_arrays">
         <item>NEW</item>
         <item>USED</item>
