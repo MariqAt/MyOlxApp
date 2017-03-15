@@ -28,7 +28,7 @@
         android:layout_height="87dp"
         android:adjustViewBounds="false"
         android:cropToPadding="false"
-        android:src="@drawable/Admin" />
+        android:src="@drawable/admin" />
     <Button
 
         android:layout_width="match_parent"
