@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+    <TextView
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notice"
+        android:textSize = "25sp"
+        android:gravity = "center"
+        android:background="@color/colorAccent"
+
+        android:textStyle="italic"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+    <EditText
+        android:id="@+id/edit_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title"
+
+        android:drawableBottom="@color/colorAccent"
+        android:textStyle="italic"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"/>
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/category_arrays"
+        android:background="@color/colorPrimary"
+        android:prompt="@string/category_prompt" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/ownerType_arrays"
+        android:background="@color/colorPrimary"
+        android:prompt="@string/ownerType_prompt" />
+
+    <EditText
+        android:id="@+id/edit_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:maxLength="20"
+        android:textStyle="italic"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"/>
+
+
+    <EditText
+        android:id="@+id/edit_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textStyle="italic"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp" />
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/state_arrays"
+        android:background="@color/colorPrimary"
+        android:prompt="@string/state_prompt" />
+    <Button
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="PREVIEW"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="30dp"/>
+
+    <Button
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="ADD"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="30dp"/>
+
+</LinearLayout>
