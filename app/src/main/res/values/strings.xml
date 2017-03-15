@@ -8,4 +8,25 @@
     <string name="address">Address</string>
     <string name="gsm_number">GSM</string>
     <string name="registration_button">REGISTRATION</string>
+
+    <string name="category_prompt">ESTATE</string>
+    <string-array name="category_arrays">
+        <item>ESTATE</item>
+        <item>ANIMALS</item>
+        <item>ELECTRONICS</item>
+        <item>FASHION</item>
+
+    </string-array>
+    <string name="ownerType_prompt">PRIVATE</string>
+    <string-array name="ownerType_arrays">
+        <item>PRIVATE</item>
+        <item>BUSINESS</item>
+
+
+    </string-array>
+    <string name="state_prompt">NEW</string>
+    <string-array name="state_arrays">
+        <item>NEW</item>
+        <item>USED</item>
+    </string-array>
 </resources>
