@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.ittalents.myfirstaplication.model.OLX;
+import com.ittalents.myfirstaplication.model.RegularUser;
+
 public class CreateAccountActivity extends AppCompatActivity {
 
     private OLX olx;
@@ -35,7 +38,7 @@ public class CreateAccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (isValiDate()) {
-                    OLX.User.RegularUser user = OLX.User.RegularUser.createUser(registName.getText().toString(),
+                    RegularUser user = RegularUser.createUser(registName.getText().toString(),
                         registEmail.getText().toString(),registGsm.getText().toString(), olx);
                     Intent intent = new Intent(CreateAccountActivity.this, MyHomeActivity.class);
                     Bundle luggage = new Bundle();

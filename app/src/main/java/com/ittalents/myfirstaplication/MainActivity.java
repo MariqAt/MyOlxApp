@@ -8,9 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.ittalents.myfirstaplication.model.RegularUser;
+
 public class MainActivity extends AppCompatActivity {
 
-    OLX.User.RegularUser user;
+    RegularUser user;
     private EditText email;
     private EditText password;
     private Button loginButton;

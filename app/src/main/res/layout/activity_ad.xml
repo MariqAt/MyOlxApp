@@ -22,9 +22,8 @@
         android:textColor="@color/colorPrimaryDark"
         />
     <ImageView
-        android:layout_width="184dp"
-        android:layout_height="197dp"
-        android:layout_gravity = "1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:adjustViewBounds="false"
         android:cropToPadding="false"
         android:src="@drawable/ad"

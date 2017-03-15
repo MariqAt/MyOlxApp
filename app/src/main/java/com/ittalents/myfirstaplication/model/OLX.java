@@ -36,18 +36,19 @@ public class OLX {
         this.regularUsers.add(user);
     }
 
-    public void logInUser(String mail, String password) {
+    public boolean logInUser(String mail, String password) {
         for (RegularUser regularUser : regularUsers) {
             if (regularUser.getMail().equals(mail)) {
                 User user = (User) regularUser;
                 if (user.getPassword().equals(password)) {
                     // System.out.println("Wolcome " + regularUser.getName());
                     this.loggedRegularUsers.add(regularUser);
-                    return;
+                    return true;
                 }
             }
         }
-        System.out.println("Your mail or your password aren't correct! Please, try again!");
+        //System.out.println("Your mail or your password aren't correct! Please, try again!");
+        return false;
     }
 
     public void logOutUser(RegularUser user) {
