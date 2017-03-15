@@ -13,8 +13,6 @@
         android:layout_weight="1"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:adjustViewBounds="false"
-        android:cropToPadding="false"
         android:src="@drawable/picture"
         android:background="@drawable/frame_picture"
         android:id="@+id/imageView" />

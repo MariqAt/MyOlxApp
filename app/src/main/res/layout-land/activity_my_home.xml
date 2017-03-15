@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.ittalents.myfirstaplication.MyHomeActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/olx4"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/my_notice"
+                    android:textStyle="boad"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorDark"
+                    android:textSize="22sp"
+                    android:background="@drawable/button3"
+                    android:layout_marginTop="20dp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button1"
+                    android:textColor="@color/colorDark"
+                    android:text="@string/add_notice"
+                    android:textAllCaps="false"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="7"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button1"
+                    android:textColor="@color/colorDark"
+                    android:text="@string/active"
+                    android:textAllCaps="false"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="7"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button1"
+                    android:textColor="@color/colorDark"
+                    android:text="@string/archive"
+                    android:textAllCaps="false"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="7"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/messages"
+                    android:textStyle="boad"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorDark"
+                    android:textSize="22sp"
+                    android:background="@drawable/button3"
+                    android:layout_marginTop="20dp"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button1"
+                    android:textColor="@color/colorDark"
+                    android:text="@string/all"
+                    android:textAllCaps="false"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:height="5dp"
+                    android:layout_weight="7" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Useful Contact"
+                    android:textStyle="boad"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorDark"
+                    android:textSize="22sp"
+                    android:background="@drawable/button3"
+                    android:layout_marginTop="20dp"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button1"
+                    android:textColor="@color/colorDark"
+                    android:text="Contact Us"
+                    android:textAllCaps="false"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="7"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
