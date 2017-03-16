@@ -13,13 +13,13 @@ import com.ittalents.myfirstaplication.model.RegularUser;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
-    private OLX olx;
     private EditText registName;
     private EditText registAddress;
     private EditText registEmail;
     private EditText registPassword;
     private EditText registGsm;
     private Button registButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +38,15 @@ public class CreateAccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (isValidDate()) {
-                    //RegularUser user = RegularUser.createUser(registName.getText().toString(),
-                    //    registEmail.getText().toString(),registGsm.getText().toString(), olx);
-                    Intent intent = new Intent(CreateAccountActivity.this, MyHomeActivity.class);
+                    Toast.makeText(CreateAccountActivity.this, "You are logged successful", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(CreateAccountActivity.this, OLXActivity.class);
+                    CreateAccountActivity.this.startActivity(intent);
+
+                    RegularUser user = RegularUser.createUser(registName.getText().toString(),
+                        registAddress.getText().toString(), registEmail.getText().toString(),
+                            registPassword.getText().toString() , registGsm.getText().toString(), OLX.getInstance());
                     //Bundle luggage = new Bundle();
                     //luggage.putString("registName", registName.getText().toString());
-                    CreateAccountActivity.this.startActivity(intent);
                 } else {
                     Toast.makeText(CreateAccountActivity.this, "The entered data are not valid!", Toast.LENGTH_SHORT).show();
                 }
@@ -72,7 +75,17 @@ public class CreateAccountActivity extends AppCompatActivity {
         if (pass.isEmpty()) {
             isValid = false;
             registPassword.setError("The password must be not empty!");
-        }
+        } else
+           if (pass.length() < 8) {
+               isValid = false;
+               registPassword.setError("The password must be larger than 8 symbols!");
+        } else
+           if (!RegularUser.isValidPassword(pass)) {
+               isValid = false;
+               registPassword.setError("The password must contain at least one capital letter, one lowercase and one lucky number!");
+
+           }
+
         String gsm = registGsm.getText().toString();
         if (gsm.isEmpty()) {
             isValid = false;

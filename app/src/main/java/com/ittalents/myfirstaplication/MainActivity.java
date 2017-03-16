@@ -66,12 +66,12 @@ public class MainActivity extends AppCompatActivity {
         String mail = email.getText().toString();
             if (mail.isEmpty()) {
                 valid = false;
-                loginButton.setError("Please, enter you e-mail.!");
+                email.setError("Please, enter you e-mail!");
             }
         String pass = password.getText().toString();
             if (pass.isEmpty()) {
                 valid = false;
-                loginButton.setError("The password must be not empty! Please, enter your password!");
+                password.setError("The password must be not empty. Please, enter your password!");
             }
         return valid;
     };

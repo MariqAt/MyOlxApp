@@ -14,14 +14,14 @@ public class Admin extends User {
 
     public static ArrayList<Notice> pendingAds = new ArrayList<Notice>();;
 
-    private Admin(String name, String mail, String gsm, OLX olx) {
-        super(name, mail, gsm);
+    private Admin(String name, String address, String mail, String password, String gsm, OLX olx) {
+        super(name, address, mail, password, gsm);
         this.olx = olx;
     }
 
-    public static Admin getInstance(String name, String mail, String gsm, OLX olx) {
+    public static Admin getInstance(String name, String address, String mail, String password, String gsm, OLX olx) {
         if (instance == null) {
-            instance = new Admin(name, mail, gsm, olx);
+            instance = new Admin(name, address, mail, password, gsm, olx);
         }
         return instance;
     }

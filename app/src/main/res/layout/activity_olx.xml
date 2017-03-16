@@ -43,10 +43,8 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/star"
                         android:background="#88888888"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_toRightOf="@+id/notice_dress1_button"
-                        android:layout_toEndOf="@+id/notice_dress1_button" />
+                        android:layout_toEndOf="@+id/notice_dress1_button"
+                        android:layout_toRightOf="@+id/notice_dress1_button" />
                 </RelativeLayout>
 
                 <RelativeLayout>
@@ -56,8 +54,8 @@
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/dress2"
                         android:minHeight="80dp"
-                        android:text="    Red Dress  "
-                        android:layout_marginLeft="10dp"
+                        android:text=" Red Dress  "
+                        android:layout_marginLeft="20dp"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/main_button"
                         android:textColor="@android:color/black"/>
@@ -221,7 +219,7 @@
                         android:drawableLeft="@drawable/home"
                         android:minHeight="80dp"
                         android:src="@drawable/suit"
-                        android:text="Small House"
+                        android:text="Small House  "
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/main_button"

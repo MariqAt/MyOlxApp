@@ -16,6 +16,7 @@ import java.util.TreeSet;
 public abstract class User implements Comparable<User> {
 
     private String name;
+    private String address;
     private String mail;
     private String gsm;
     private String password;
@@ -23,17 +24,26 @@ public abstract class User implements Comparable<User> {
 
     private TreeMap<User, TreeSet<Message>> messages;
 
-    public User(String name, String mail, String gsm) {
+    public User(String name, String address, String mail, String password, String gsm) {
         if (name != null && !name.isEmpty()) {
             this.name = name;
+        }
+        if (address != null && !address.isEmpty()) {
+            this.address = address;
         }
         if (mail != null && !mail.isEmpty()) {
             this.mail = mail;
         }
+        if (password != null && !mail.isEmpty()) {
+            this.password = password;
+        }
         if (gsm != null && !gsm.isEmpty()) {
             this.gsm = gsm;
         }
-        this.password = createPassword();
+        if (isValidPassword(password)){
+            this.password = password;
+        }
+
         this.messages = new TreeMap<User, TreeSet<Message>>();
     }
 
@@ -64,39 +74,35 @@ public abstract class User implements Comparable<User> {
 
     }
 
-    private static String createPassword() {
-        Scanner sc = new Scanner(System.in);
+    public static boolean isValidPassword(String password) {
         boolean lowerCaseLetter = false;
         boolean upperCaseLetter = false;
         boolean number = false;
-        String attemptedPassword;
-        do { System.out.println("Please input password between 8 and 20 characters, with at least 1 number, capital letter and lower case letter");
 
-            attemptedPassword = sc.nextLine();
-
-            for (int index = 0; index <= attemptedPassword.length() - 1; index++) {
-                if (attemptedPassword.charAt(index) >= 'a' && attemptedPassword.charAt(index) <= 'z') {
+            for (int index = 0; index <= password.length() - 1; index++) {
+                if (password.charAt(index) >= 'a' && password.charAt(index) <= 'z') {
                     lowerCaseLetter = true;
                     break;
                 }
             }
 
-            for (int index = 0; index <= attemptedPassword.length() - 1; index++) {
-                if (attemptedPassword.charAt(index) >= 'A' && attemptedPassword.charAt(index) <= 'Z') {
+            for (int index = 0; index <= password.length() - 1; index++) {
+                if (password.charAt(index) >= 'A' && password.charAt(index) <= 'Z') {
                     upperCaseLetter = true;
                     break;
                 }
             }
 
-            for (int index = 0; index <= attemptedPassword.length() - 1; index++) {
-                if (attemptedPassword.charAt(index) >= '0' && attemptedPassword.charAt(index) <= '9') {
+            for (int index = 0; index <= password.length() - 1; index++) {
+                if (password.charAt(index) >= '0' && password.charAt(index) <= '9') {
                     number = true;
                     break;
                 }
             }
-        } while ( !(lowerCaseLetter && upperCaseLetter && number && attemptedPassword.length() > 8 && attemptedPassword.length()<20) );
-        System.out.println("Password successful");
-        return attemptedPassword;
+        if ((lowerCaseLetter && upperCaseLetter && number && password.length()<15) ){
+            return true;
+        }
+        return false;
 
     }
     public String getPassword() {

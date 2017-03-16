@@ -36,15 +36,15 @@ public  class RegularUser extends User {
 
     private static int uniqueID = 1;
 
-    private RegularUser(String name, String mail, String gsm) {
-        super(name, mail, gsm);
+    private RegularUser(String name, String address, String mail, String password, String gsm) {
+        super(name, address, mail, password, gsm);
 
         this.poster = new TreeMap<>();
         this.view = new TreeSet<>();
     }
 
-    public static RegularUser createUser(String name, String mail, String gsm, OLX olx) {
-        RegularUser user = new RegularUser(name, mail, gsm);
+    public static RegularUser createUser(String name, String address, String mail, String password, String gsm, OLX olx) {
+        RegularUser user = new RegularUser(name, address, mail, password, gsm);
         olx.regUser(user);
         return user;
     }
