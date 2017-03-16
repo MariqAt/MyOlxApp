@@ -8,7 +8,7 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        android:minHeight="30"
+        android:minHeight="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:titleTextColor="@android:color/background_dark"
@@ -42,8 +42,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/star"
-                        android:layout_toRightOf="@id/notice_dress1_button"
-                        android:background="#8888888"/>
+                        android:background="#88888888"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_toRightOf="@+id/notice_dress1_button"
+                        android:layout_toEndOf="@+id/notice_dress1_button" />
                 </RelativeLayout>
 
                 <RelativeLayout>
@@ -64,7 +67,7 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/star"
                         android:layout_toRightOf="@id/notice_dress2_button"
-                        android:background="#8888888"/>
+                        android:background="#88888888"/>
 
                 </RelativeLayout>
             </TableRow>
@@ -87,8 +90,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/star"
-                        android:layout_toRightOf="@id/notice_suit_button"
-                        android:background="#8888888"/>
+                        android:background="#88888888"
+                        android:layout_toEndOf="@+id/notice_suit_button"
+                        android:layout_toRightOf="@+id/notice_suit_button"/>
 
                 </RelativeLayout>
 
@@ -110,7 +114,7 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/star"
                         android:layout_toRightOf="@id/notice_tshirt_button"
-                        android:background="#8888888"/>
+                        android:background="#88888888"/>
 
                 </RelativeLayout>
             </TableRow>
@@ -136,7 +140,7 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/star"
                         android:layout_toRightOf="@id/notice_bird_button"
-                        android:background="#8888888"/>
+                        android:background="#88888888"/>
 
                 </RelativeLayout>
 
@@ -159,7 +163,7 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/star"
                         android:layout_toRightOf="@id/notice_fish_button"
-                        android:background="#8888888"/>
+                        android:background="#88888888"/>
                 </RelativeLayout>
             </TableRow>
 
@@ -182,7 +186,7 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/star"
                         android:layout_toRightOf="@id/notice_dog_button"
-                        android:background="#8888888"/>
+                        android:background="#88888888"/>
                 </RelativeLayout>
 
                 <RelativeLayout>
@@ -203,7 +207,7 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/star"
                         android:layout_toRightOf="@id/notice_rabbit_button"
-                        android:background="#8888888"/>
+                        android:background="#88888888"/>
 
                 </RelativeLayout>
             </TableRow>
@@ -228,7 +232,7 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/star"
                         android:layout_toRightOf="@id/notice_home_button"
-                        android:background="#8888888"/>
+                        android:background="#88888888"/>
                 </RelativeLayout>
 
                 <RelativeLayout>
@@ -236,9 +240,9 @@
                         android:id="@+id/notice_house_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:minHeight="90dp"
-                        android:drawableStart="@drawable/house"
-                        android:text="      Fish           "
+                        android:minHeight="80dp"
+                        android:drawableLeft="@drawable/house"
+                        android:text="  Big House   "
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/main_button"
@@ -249,7 +253,7 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/star"
                         android:layout_toRightOf="@id/notice_house_button"
-                        android:background="#8888888"/>
+                        android:background="#88888888"/>
 
                 </RelativeLayout>
             </TableRow>

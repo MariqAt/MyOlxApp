@@ -22,7 +22,8 @@
         <activity android:name=".CorrespondenceActivity" />
         <activity android:name=".ActiveNoticeActivity" />
         <activity android:name=".ArchivedNoticeActivity" />
-        <activity android:name=".OLXActivity"></activity>
+        <activity android:name=".OLXActivity" />
+        <activity android:name=".SearchesActivity"></activity>
     </application>
 
 </manifest>
