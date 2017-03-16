@@ -49,10 +49,9 @@ public  class RegularUser extends User {
         return user;
     }
 
-    public boolean logInOlx() {
+    public static boolean logInOlx(String mail, String password) {
         boolean isLog = false;
-        User user = (User) this;
-        isLog = OLX.getInstance().logInUser(this.getMail(), user.getPassword());
+        isLog = OLX.getInstance().logInUser(mail, password);
         return isLog;
     }
 

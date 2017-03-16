@@ -37,11 +37,11 @@ public abstract class User implements Comparable<User> {
         this.messages = new TreeMap<User, TreeSet<Message>>();
     }
 
-    String getName() {
+    public String getName() {
         return this.name;
     }
 
-    String getMail() {
+    public String getMail() {
         return this.mail;
     }
 
@@ -99,7 +99,7 @@ public abstract class User implements Comparable<User> {
         return attemptedPassword;
 
     }
-    String getPassword() {
+    public String getPassword() {
         return this.password;
     }
     public void printMessage() {

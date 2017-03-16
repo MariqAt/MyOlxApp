@@ -8,15 +8,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.ittalents.myfirstaplication.model.OLX;
 import com.ittalents.myfirstaplication.model.RegularUser;
+import com.ittalents.myfirstaplication.model.User;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    RegularUser user;
     private EditText email;
     private EditText password;
     private Button loginButton;
     private Button createAccountButton;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +37,12 @@ public class MainActivity extends AppCompatActivity {
            @Override
            public void onClick(View v) {
                if (validDate()) {
-                   if (!user.logInOlx()) {
+                   if (!RegularUser.logInOlx(email.getText().toString(), password.getText().toString())) {
                        Toast.makeText(MainActivity.this, "Your mail or your password aren't correct! Please, try again!", Toast.LENGTH_LONG).show();
                    } else {
-                       Intent intent = new Intent(MainActivity.this, MyHomeActivity.class);
-                       MainActivity.this.startActivity(intent);
+                       Toast.makeText(MainActivity.this, "You are logged", Toast.LENGTH_SHORT).show();
+                       //Intent intent = new Intent(MainActivity.this, MyHomeActivity.class);
+                       //MainActivity.this.startActivity(intent);
                    }
                } else {
                    Toast.makeText(MainActivity.this, "Your mail or your password aren't correct! Please, try again!", Toast.LENGTH_LONG).show();
@@ -60,12 +66,12 @@ public class MainActivity extends AppCompatActivity {
         String mail = email.getText().toString();
             if (mail.isEmpty()) {
                 valid = false;
-                loginButton.setError("Username must be not empty!");
+                loginButton.setError("Please, enter you e-mail.!");
             }
         String pass = password.getText().toString();
             if (pass.isEmpty()) {
                 valid = false;
-                loginButton.setError("The password must be not empty!");
+                loginButton.setError("The password must be not empty! Please, enter your password!");
             }
         return valid;
     };

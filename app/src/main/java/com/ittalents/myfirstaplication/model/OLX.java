@@ -32,15 +32,14 @@ public class OLX {
         this.archivedAds = new TreeMap<RegularUser.Category, TreeSet<RegularUser.Notice>>();
     }
 
-    void regUser(RegularUser user) {
+    public void regUser(RegularUser user) {
         this.regularUsers.add(user);
     }
 
     public boolean logInUser(String mail, String password) {
         for (RegularUser regularUser : regularUsers) {
             if (regularUser.getMail().equals(mail)) {
-                User user = (User) regularUser;
-                if (user.getPassword().equals(password)) {
+                if (regularUser.getPassword().equals(password)) {
                     // System.out.println("Wolcome " + regularUser.getName());
                     this.loggedRegularUsers.add(regularUser);
                     return true;

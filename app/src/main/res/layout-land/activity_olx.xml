@@ -114,6 +114,55 @@
                 </RelativeLayout>
 
                 <RelativeLayout>
+
+                    <Button
+                        android:id="@+id/notice_bird_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/bird"
+                        android:minHeight="90dp"
+                        android:src="@drawable/suit"
+                        android:text="       Bird             "
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/main_button"
+                        android:textColor="@android:color/black"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/star"
+                        android:layout_toRightOf="@id/notice_bird_button"
+                        android:background="#88888888"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout>
+
+                    <Button
+                        android:id="@+id/notice_fish_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="80dp"
+                        android:drawableLeft="@drawable/fish"
+                        android:text="       Fish          "
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/main_button"
+                        android:textColor="@android:color/black"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/star"
+                        android:layout_toRightOf="@id/notice_fish_button"
+                        android:background="#88888888"/>
+                </RelativeLayout>
+            </TableRow>
+
+            <TableRow>
+
+                <RelativeLayout>
                     <Button
                         android:id="@+id/notice_dog_button"
                         android:layout_width="wrap_content"
@@ -155,9 +204,6 @@
                         android:background="#88888888"/>
 
                 </RelativeLayout>
-            </TableRow>
-
-            <TableRow>
                 <RelativeLayout>
                     <Button
                         android:id="@+id/notice_home_button"
@@ -179,7 +225,9 @@
                         android:layout_toRightOf="@id/notice_home_button"
                         android:background="#88888888"/>
                 </RelativeLayout>
+            </TableRow>
 
+            <TableRow>
                 <RelativeLayout>
                     <Button
                         android:id="@+id/notice_house_button"
@@ -187,7 +235,7 @@
                         android:layout_height="wrap_content"
                         android:minHeight="80dp"
                         android:drawableLeft="@drawable/house"
-                        android:text="      Fish              "
+                        android:text="      Big HOUSE   "
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/main_button"
@@ -199,11 +247,8 @@
                         android:src="@drawable/star"
                         android:layout_toRightOf="@id/notice_house_button"
                         android:background="#88888888"/>
-
                 </RelativeLayout>
             </TableRow>
-
-
         </TableLayout>
     </ScrollView>
 
