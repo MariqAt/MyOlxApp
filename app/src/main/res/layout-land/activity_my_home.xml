@@ -22,20 +22,21 @@
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:src="@drawable/olx4"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
                 android:orientation="vertical">
-
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/my_notice"
-                    android:textStyle="boad"
+                    android:textStyle="italic"
                     android:textAlignment="center"
                     android:textColor="@color/colorDark"
                     android:textSize="22sp"
@@ -52,8 +53,7 @@
                     android:textSize="17sp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="7"/>
+                    android:layout_marginTop="10dp"/>
 
                 <Button
                     android:layout_width="match_parent"
@@ -65,8 +65,7 @@
                     android:textSize="17sp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="7"/>
+                    android:layout_marginTop="10dp"/>
 
                 <Button
                     android:layout_width="match_parent"
@@ -78,14 +77,13 @@
                     android:textSize="17sp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="7"/>
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/messages"
-                    android:textStyle="boad"
+                    android:textStyle="italic"
                     android:textAlignment="center"
                     android:textColor="@color/colorDark"
                     android:textSize="22sp"
@@ -103,14 +101,13 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:layout_marginTop="10dp"
-                    android:height="5dp"
-                    android:layout_weight="7" />
+                    android:height="5dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Useful Contact"
-                    android:textStyle="boad"
+                    android:text="@string/useful_contact"
+                    android:textStyle="italic"
                     android:textAlignment="center"
                     android:textColor="@color/colorDark"
                     android:textSize="22sp"
@@ -122,13 +119,12 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/button1"
                     android:textColor="@color/colorDark"
-                    android:text="Contact Us"
+                    android:text="@string/contact_us"
                     android:textAllCaps="false"
                     android:textSize="17sp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="7"/>
+                    android:layout_marginTop="10dp"/>
 
             </LinearLayout>
 

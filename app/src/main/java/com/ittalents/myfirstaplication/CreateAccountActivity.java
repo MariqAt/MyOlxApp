@@ -37,12 +37,13 @@ public class CreateAccountActivity extends AppCompatActivity {
         registButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isValiDate()) {
-                    RegularUser user = RegularUser.createUser(registName.getText().toString(),
-                        registEmail.getText().toString(),registGsm.getText().toString(), olx);
+                if (isValidDate()) {
+                    //RegularUser user = RegularUser.createUser(registName.getText().toString(),
+                    //    registEmail.getText().toString(),registGsm.getText().toString(), olx);
                     Intent intent = new Intent(CreateAccountActivity.this, MyHomeActivity.class);
-                    Bundle luggage = new Bundle();
-                    luggage.putString("registName", registName.getText().toString());
+                    //Bundle luggage = new Bundle();
+                    //luggage.putString("registName", registName.getText().toString());
+                    CreateAccountActivity.this.startActivity(intent);
                 } else {
                     Toast.makeText(CreateAccountActivity.this, "The entered data are not valid!", Toast.LENGTH_SHORT).show();
                 }
@@ -50,33 +51,33 @@ public class CreateAccountActivity extends AppCompatActivity {
         });
 }
 
-    private boolean isValiDate() {
-        boolean valid = true;
+    private boolean isValidDate() {
+        boolean isValid = true;
         String name = registName.getText().toString();
         if (name.isEmpty()) {
-            valid = false;
+            isValid = false;
             registName.setError("Username must be not empty!");
         }
         String address = registAddress.getText().toString();
         if (address.isEmpty()) {
-            valid = false;
+            isValid = false;
             registAddress.setError("User address must be not empty!");
         }
         String email = registEmail.getText().toString();
         if (email.isEmpty()) {
-            valid = false;
+            isValid = false;
             registEmail.setError("User mail must be not empty!");
         }
         String pass = registPassword.getText().toString();
         if (pass.isEmpty()) {
-            valid = false;
+            isValid = false;
             registPassword.setError("The password must be not empty!");
         }
         String gsm = registGsm.getText().toString();
         if (gsm.isEmpty()) {
-            valid = false;
+            isValid = false;
             registGsm.setError("GSM number must be not empty!");
         }
-        return valid;
+        return isValid;
     }
     }

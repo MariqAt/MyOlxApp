@@ -21,7 +21,8 @@
         <activity android:name=".AdminControlPanelActivity" />
         <activity android:name=".CorrespondenceActivity" />
         <activity android:name=".ActiveNoticeActivity" />
-        <activity android:name=".ArchivedNoticeActivity"></activity>
+        <activity android:name=".ArchivedNoticeActivity" />
+        <activity android:name=".OLXActivity"></activity>
     </application>
 
 </manifest>
