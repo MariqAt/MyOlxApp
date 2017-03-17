@@ -14,7 +14,7 @@ import com.ittalents.myfirstaplication.model.RegularUser;
 public class CreateAccountActivity extends AppCompatActivity {
 
     public static final int RESULT_CODE_SUCCESS = 2;
-    public static final int RESULT_CODE_CANCLE = 3;
+    public static final int RESULT_CODE_CANCELED = 3;
     private EditText registName;
     private EditText registAddress;
     private EditText registEmail;
@@ -22,6 +22,8 @@ public class CreateAccountActivity extends AppCompatActivity {
     private EditText registGsm;
     private Button registButton;
     private Button cancelButton;
+
+
 
 
     @Override
@@ -43,6 +45,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                 if (isValidDate()) {
                     MainActivity.loggedUser = RegularUser.createUser(registName.getText().toString(), registAddress.getText().toString(),
                             registEmail.getText().toString(), registPassword.getText().toString(), registGsm.getText().toString());
+                    OLX.regularUsers.add((RegularUser) MainActivity.loggedUser);
                     Toast.makeText(CreateAccountActivity.this, "You are logged successfull", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent();
                     intent.putExtra("email", MainActivity.loggedUser.getMail());
@@ -61,7 +64,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setResult(RESULT_CODE_CANCLE); //canceled
+                setResult(RESULT_CODE_CANCELED); //canceled
                 finish();
             }
         });

@@ -13,6 +13,7 @@ import com.ittalents.myfirstaplication.model.RegularUser;
 import com.ittalents.myfirstaplication.model.User;
 
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private Button createAccountButton;
 
     public static User loggedUser = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +38,16 @@ public class MainActivity extends AppCompatActivity {
        loginButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+
                if (validDate()) {
                    if (!RegularUser.logInOlx(email.getText().toString(), password.getText().toString())) {
                        Toast.makeText(MainActivity.this, "Your mail or your password aren't correct! Please, try again to create your account!", Toast.LENGTH_LONG).show();
                    } else {
                        Toast.makeText(MainActivity.this, "Login successfull!", Toast.LENGTH_SHORT).show();
                        Intent intent = new Intent(MainActivity.this, MyHomeActivity.class);
-                       intent.putExtra("user", loggedUser);
+                       Bundle bagaj = new Bundle();
+                       bagaj.putSerializable("user", loggedUser);
+                       intent.putExtras(bagaj);
                        startActivity(intent);
                        return;
                    }
@@ -69,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-            if(resultCode == CreateAccountActivity.RESULT_CODE_CANCLE) {
+            if(resultCode == CreateAccountActivity.RESULT_CODE_CANCELED) {
                 Toast.makeText(this, "Your registration isn't successfull!", Toast.LENGTH_SHORT).show();
             }
-            if (requestCode == CreateAccountActivity.RESULT_CODE_SUCCESS) {
+            if (resultCode == CreateAccountActivity.RESULT_CODE_SUCCESS) {
                 if (data != null) {
                     email.setText(data.getStringExtra("email"));
                     password.setText(data.getStringExtra("pass"));
