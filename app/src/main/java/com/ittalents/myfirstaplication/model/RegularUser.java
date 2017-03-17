@@ -1,5 +1,6 @@
 package com.ittalents.myfirstaplication.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -43,9 +44,9 @@ public  class RegularUser extends User {
         this.view = new TreeSet<>();
     }
 
-    public static RegularUser createUser(String name, String address, String mail, String password, String gsm, OLX olx) {
+    public static RegularUser createUser(String name, String address, String mail, String password, String gsm) {
         RegularUser user = new RegularUser(name, address, mail, password, gsm);
-        olx.regUser(user);
+        OLX.getInstance().regUser(user);
         return user;
     }
 
@@ -153,7 +154,7 @@ public  class RegularUser extends User {
 
 
 
-    public class Notice implements Comparable<Notice> {
+    public class Notice implements Comparable<Notice>, Serializable {
         private RegularUser user;
         private String title;
         Category category;

@@ -19,6 +19,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     private EditText registPassword;
     private EditText registGsm;
     private Button registButton;
+    private Button cancelButton;
 
 
     @Override
@@ -38,15 +39,17 @@ public class CreateAccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (isValidDate()) {
-                    Toast.makeText(CreateAccountActivity.this, "You are logged successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateAccountActivity.this, "You are logged successfull", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(CreateAccountActivity.this, OLXActivity.class);
-                    CreateAccountActivity.this.startActivity(intent);
 
                     RegularUser user = RegularUser.createUser(registName.getText().toString(),
                         registAddress.getText().toString(), registEmail.getText().toString(),
-                            registPassword.getText().toString() , registGsm.getText().toString(), OLX.getInstance());
+                            registPassword.getText().toString() , registGsm.getText().toString());
+
                     //Bundle luggage = new Bundle();
                     //luggage.putString("registName", registName.getText().toString());
+                    CreateAccountActivity.this.startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(CreateAccountActivity.this, "The entered data are not valid!", Toast.LENGTH_SHORT).show();
                 }

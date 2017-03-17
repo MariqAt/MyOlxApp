@@ -1,5 +1,6 @@
 package com.ittalents.myfirstaplication.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -13,7 +14,7 @@ import java.util.TreeSet;
  * Created by vankor on 14-Mar-17.
  */
 
-public abstract class User implements Comparable<User> {
+public abstract class User implements Comparable<User>, Serializable {
 
     private String name;
     private String address;

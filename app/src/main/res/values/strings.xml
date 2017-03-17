@@ -34,6 +34,7 @@
     <string name="all">All</string>
     <string name="useful_contact">Useful Contact</string>
     <string name="contact_us">Contact Us</string>
+    <string name="cancel">cancel</string>
     <string-array name="state_arrays">
         <item>NEW</item>
         <item>USED</item>

@@ -21,12 +21,13 @@ public class MainActivity extends AppCompatActivity {
     private Button loginButton;
     private Button createAccountButton;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        RegularUser mimi = RegularUser.createUser("Mimi", "SF", "mimi", "Mimi1234", "0899511111");
+        OLX.regUser(mimi);
 
         email = (EditText) this.findViewById(R.id.email_text);
         password = (EditText) this.findViewById(R.id.password_text);
@@ -38,11 +39,12 @@ public class MainActivity extends AppCompatActivity {
            public void onClick(View v) {
                if (validDate()) {
                    if (!RegularUser.logInOlx(email.getText().toString(), password.getText().toString())) {
-                       Toast.makeText(MainActivity.this, "Your mail or your password aren't correct! Please, try again!", Toast.LENGTH_LONG).show();
+                       Toast.makeText(MainActivity.this, "Your mail or your password aren't correct! Please, try again ot create your account!", Toast.LENGTH_LONG).show();
                    } else {
-                       Toast.makeText(MainActivity.this, "You are logged", Toast.LENGTH_SHORT).show();
-                       //Intent intent = new Intent(MainActivity.this, MyHomeActivity.class);
-                       //MainActivity.this.startActivity(intent);
+                       Toast.makeText(MainActivity.this, "Login successfull!", Toast.LENGTH_SHORT).show();
+                       Intent intent = new Intent(MainActivity.this, OLX.class);
+                       intent.putExtra("user", OLX.loggedUser);
+                       MainActivity.this.startActivity(intent);
                    }
                } else {
                    Toast.makeText(MainActivity.this, "Your mail or your password aren't correct! Please, try again!", Toast.LENGTH_LONG).show();
