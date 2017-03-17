@@ -16,12 +16,26 @@
         android:layout_weight="1"
         android:src="@drawable/olx4" />
 
-    <EditText
+    <TextView
         android:id="@+id/text_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorAccent"
-        android:textSize="10sp" />
+        android:textStyle="italic"
+        android:textColor="@color/colorDark"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp" />
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="@android:color/background_dark"
+        android:background="@drawable/button2">
+
+
+    </android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -137,6 +151,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
                 android:layout_weight="7"/>
 
 

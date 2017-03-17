@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">>
+
+    <item android:id="@+id/olx_menu"
+        android:icon="@drawable/olx"
+        android:title="@string/app_name"
+        android:showAsAction="always" />
+
+    <item android:id="@+id/pageOlx"
+        android:icon="@drawable/world"
+        android:title="OLX Pages" />
+
+    <item android:id="@+id/searches"
+        android:icon="@drawable/star"
+        android:title="Searches Notices" />
+
+    <item android:id="@+id/add_notices"
+        android:icon="@drawable/plus"
+        android:title="Add Notices" />
+
+    <item android:id="@+id/messages"
+        android:icon="@drawable/message"
+        android:title="Messages" />
+
+    <item android:id="@+id/my_home"
+        android:icon="@drawable/user"
+        android:title="My Home" />
+
+    <item android:id="@+id/exit"
+        android:icon="@drawable/exit"
+        android:title="Exit" />
+
+</menu>

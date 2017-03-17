@@ -20,6 +20,10 @@ public class OLXActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_olx);
 
+        for (ArrayList<RegularUser.Notice> notice : OLX.ads.values()) {
+           if (notice != null) {
 
+           }
+        }
     }
 }

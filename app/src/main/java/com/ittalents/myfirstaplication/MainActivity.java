@@ -49,10 +49,8 @@ public class MainActivity extends AppCompatActivity {
                        bagaj.putSerializable("user", loggedUser);
                        intent.putExtras(bagaj);
                        startActivity(intent);
-                       return;
+                       finish();
                    }
-               } else {
-                   Toast.makeText(MainActivity.this, "Your mail or your password aren't correct! Please, try again!", Toast.LENGTH_LONG).show();
                }
            }
        });

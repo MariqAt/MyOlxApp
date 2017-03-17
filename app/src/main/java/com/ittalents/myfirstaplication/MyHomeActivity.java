@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.ittalents.myfirstaplication.model.RegularUser;
 
@@ -18,7 +19,7 @@ import java.net.URI;
 
 public class MyHomeActivity extends AppCompatActivity {
 
-    private EditText textName;
+    private TextView textName;
     private Button addNoticeButton;
     private Button activeNoticeButton;
     private Button archiveNoticeButton;
@@ -31,7 +32,7 @@ public class MyHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_home);
 
         RegularUser u = (RegularUser) getIntent().getExtras().getSerializable("user");
-        textName = (EditText) this.findViewById(R.id.text_name);
+        textName = (TextView) this.findViewById(R.id.text_name);
         textName.setText(u.getName().toString());
 
         addNoticeButton = (Button) this.findViewById(R.id.add_notice_button);
@@ -43,7 +44,7 @@ public class MyHomeActivity extends AppCompatActivity {
         addNoticeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MyHomeActivity.this, NoticeActivity.class);
+                Intent intent = new Intent(MyHomeActivity.this, AdActivity.class);
                 MyHomeActivity.this.startActivity(intent);
             }
         });
@@ -75,7 +76,7 @@ public class MyHomeActivity extends AppCompatActivity {
         contactUsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("0899511111"));
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel: 0887888888"));
                 if (ActivityCompat.checkSelfPermission(MyHomeActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     // TODO: Consider calling
                     //    ActivityCompat#requestPermissions
