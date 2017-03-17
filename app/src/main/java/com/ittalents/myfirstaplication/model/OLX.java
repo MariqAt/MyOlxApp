@@ -1,5 +1,7 @@
 package com.ittalents.myfirstaplication.model;
 
+import com.ittalents.myfirstaplication.MainActivity;
+
 import java.util.ArrayList;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -17,6 +19,10 @@ public class OLX {
 
     public static TreeSet<RegularUser> loggedRegularUsers;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> dedaccce9f6e9a33937ade87cdb3f12217be394a
 
     public static TreeMap<RegularUser.Category, ArrayList<RegularUser.Notice>> ads;
 
@@ -41,6 +47,10 @@ public class OLX {
                 if (regularUser.getPassword().equals(password)) {
                     // System.out.println("Wolcome " + regularUser.getName());
                     this.loggedRegularUsers.add(regularUser);
+<<<<<<< HEAD
+=======
+                    MainActivity.loggedUser = regularUser;
+>>>>>>> dedaccce9f6e9a33937ade87cdb3f12217be394a
                     return true;
                 }
             }
