@@ -33,9 +33,7 @@ public class OLX {
         this.archivedAds = new TreeMap<RegularUser.Category, TreeSet<RegularUser.Notice>>();
     }
 
-    public static void regUser(RegularUser user) {
-        regularUsers.add(user);
-    }
+    public static void regUser(RegularUser user) {regularUsers.add(user);}
 
     public boolean logInUser(String mail, String password) {
         for (RegularUser regularUser : regularUsers) {

@@ -13,6 +13,8 @@ import com.ittalents.myfirstaplication.model.RegularUser;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
+    public static final int RESULT_CODE_SUCCESS = 2;
+    public static final int RESULT_CODE_CANCLE = 3;
     private EditText registName;
     private EditText registAddress;
     private EditText registEmail;
@@ -39,22 +41,31 @@ public class CreateAccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (isValidDate()) {
+                    RegularUser u = RegularUser.createUser(registName.getText().toString(), registAddress.getText().toString(),
+                            registEmail.getText().toString(), registPassword.getText().toString(), registGsm.getText().toString());
                     Toast.makeText(CreateAccountActivity.this, "You are logged successfull", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(CreateAccountActivity.this, OLXActivity.class);
-
-                    RegularUser user = RegularUser.createUser(registName.getText().toString(),
-                        registAddress.getText().toString(), registEmail.getText().toString(),
-                            registPassword.getText().toString() , registGsm.getText().toString());
-
-                    //Bundle luggage = new Bundle();
-                    //luggage.putString("registName", registName.getText().toString());
-                    CreateAccountActivity.this.startActivity(intent);
+                    Intent intent = new Intent();
+                    intent.putExtra("email", u.getMail());
+                    intent.putExtra("pass", u.getPassword());
+                    setResult(RESULT_CODE_SUCCESS, intent);
                     finish();
                 } else {
                     Toast.makeText(CreateAccountActivity.this, "The entered data are not valid!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+        cancelButton = (Button) this.findViewById(R.id.button_cancle);
+
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(RESULT_CODE_CANCLE); //canceled
+                finish();
+            }
+        });
+
 }
 
     private boolean isValidDate() {

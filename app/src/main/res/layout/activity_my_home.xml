@@ -9,126 +9,140 @@
     android:gravity="center"
     tools:context="com.ittalents.myfirstaplication.MyHomeActivity">
 
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:src="@drawable/olx4"/>
+        android:src="@drawable/olx4" />
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/text_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textSize="10sp" />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:weightSum="1">
-
-        <TextView
+        android:layout_weight="3">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/my_notice"
-            android:textStyle="italic"
-            android:textAlignment="center"
-            android:textColor="@color/colorDark"
-            android:textSize="22sp"
-            android:background="@drawable/button3"
-            android:layout_marginTop="20dp" />
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:weightSum="1">
 
-        <Button
-            android:id="@+id/add_notice_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button1"
-            android:textColor="@color/colorDark"
-            android:text="@string/add_notice"
-            android:textAllCaps="false"
-            android:textSize="17sp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="7"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/my_notice"
+                android:textStyle="italic"
+                android:textAlignment="center"
+                android:textColor="@color/colorDark"
+                android:textSize="22sp"
+                android:background="@drawable/button3"
+                android:layout_marginTop="20dp" />
 
-        <Button
-            android:id="@+id/active_notice_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button1"
-            android:textColor="@color/colorDark"
-            android:text="@string/active"
-            android:textAllCaps="false"
-            android:textSize="17sp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="7"/>
+            <Button
+                android:id="@+id/add_notice_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button1"
+                android:textColor="@color/colorDark"
+                android:text="@string/add_notice"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="7"/>
 
-        <Button
-            android:id="@+id/archive_notice_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button1"
-            android:textColor="@color/colorDark"
-            android:text="@string/archive"
-            android:textAllCaps="false"
-            android:textSize="17sp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="7"/>
+            <Button
+                android:id="@+id/active_notice_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button1"
+                android:textColor="@color/colorDark"
+                android:text="@string/active"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="7"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/messages"
-            android:textStyle="italic"
-            android:textAlignment="center"
-            android:textColor="@color/colorDark"
-            android:textSize="22sp"
-            android:background="@drawable/button3"
-            android:layout_marginTop="20dp"/>
+            <Button
+                android:id="@+id/archive_notice_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button1"
+                android:textColor="@color/colorDark"
+                android:text="@string/archive"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="7"/>
 
-        <Button
-            android:id="@+id/all_messages_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button1"
-            android:textColor="@color/colorDark"
-            android:text="@string/all"
-            android:textAllCaps="false"
-            android:textSize="17sp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:height="5dp"
-            android:layout_weight="7" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/messages"
+                android:textStyle="italic"
+                android:textAlignment="center"
+                android:textColor="@color/colorDark"
+                android:textSize="22sp"
+                android:background="@drawable/button3"
+                android:layout_marginTop="20dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Useful Contact"
-            android:textStyle="italic"
-            android:textAlignment="center"
-            android:textColor="@color/colorDark"
-            android:textSize="22sp"
-            android:background="@drawable/button3"
-            android:layout_marginTop="20dp"/>
+            <Button
+                android:id="@+id/all_messages_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button1"
+                android:textColor="@color/colorDark"
+                android:text="@string/all"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:height="5dp"
+                android:layout_weight="7" />
 
-        <Button
-            android:id="@+id/contact_us_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button1"
-            android:textColor="@color/colorDark"
-            android:text="Contact Us"
-            android:textAllCaps="false"
-            android:textSize="17sp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="7"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Useful Contact"
+                android:textStyle="italic"
+                android:textAlignment="center"
+                android:textColor="@color/colorDark"
+                android:textSize="22sp"
+                android:background="@drawable/button3"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:id="@+id/contact_us_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button1"
+                android:textColor="@color/colorDark"
+                android:text="Contact Us"
+                android:textAllCaps="false"
+                android:textSize="17sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="7"/>
 
 
-    </LinearLayout>
+        </LinearLayout>
 
+
+    </ScrollView>
 
 </LinearLayout>

@@ -12,10 +12,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.ittalents.myfirstaplication.model.RegularUser;
+
 import java.net.URI;
 
 public class MyHomeActivity extends AppCompatActivity {
 
+    private EditText textName;
     private Button addNoticeButton;
     private Button activeNoticeButton;
     private Button archiveNoticeButton;
@@ -26,6 +29,10 @@ public class MyHomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_home);
+
+        RegularUser u = (RegularUser) getIntent().getExtras().getSerializable("user");
+        textName = (EditText) this.findViewById(R.id.text_name);
+        textName.setText(u.getName().toString());
 
         addNoticeButton = (Button) this.findViewById(R.id.add_notice_button);
         activeNoticeButton = (Button) this.findViewById(R.id.active_notice_button);
