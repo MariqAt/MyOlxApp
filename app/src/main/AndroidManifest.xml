@@ -24,6 +24,9 @@
         <activity android:name=".ActiveNoticeActivity" />
         <activity android:name=".ArchivedNoticeActivity" />
         <activity android:name=".OLXActivity" />
+        <activity android:name=".MyHomeActivity" />
+        <activity android:name=".NoticeActivity" />
+        <activity android:name=".MessageActivity" />
         <activity android:name=".SearchesActivity"></activity>
     </application>
 
