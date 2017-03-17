@@ -22,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
     private Button loginButton;
     private Button createAccountButton;
 
+    public static User loggedUser = null;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                    } else {
                        Toast.makeText(MainActivity.this, "Login successfull!", Toast.LENGTH_SHORT).show();
                        Intent intent = new Intent(MainActivity.this, MyHomeActivity.class);
-                       intent.putExtra("user", OLX.loggedUser);
+                       intent.putExtra("user", loggedUser);
                        startActivity(intent);
                        return;
                    }

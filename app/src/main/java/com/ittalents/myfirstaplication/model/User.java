@@ -23,7 +23,7 @@ public abstract class User implements Comparable<User>, Serializable {
     private String password;
 
 
-    private TreeMap<User, TreeSet<Message>> messages;
+    public TreeMap<User, TreeSet<Message>> messages;
 
     public User(String name, String address, String mail, String password, String gsm) {
         if (name != null && !name.isEmpty()) {
@@ -118,6 +118,8 @@ public abstract class User implements Comparable<User>, Serializable {
             }
         }
     }
+
+
 
     @Override
     public int compareTo(User arg0) {

@@ -21,23 +21,55 @@
         android:textColor="@color/colorPrimaryDark"
         />
 
-    <TextView
+    <Spinner
+        android:id="@+id/messagedUsers"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/colorPrimary"
+        android:prompt="@string/state_prompt" />
+
+    <TextView
+        android:id="@+id/message_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Message History"
         android:textSize="20sp"
         android:textColor="@color/colorDark"
-        android:layout_weight = "1"
+
 
         />
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/input_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Input Message"
         android:textSize="20sp"
         android:textColor="@color/colorDark"
-        android:layout_weight = "5"
+
 
         />
+    <EditText
+        android:id="@+id/receiver_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receiver Name"
+        android:textSize="20sp"
+        android:textColor="@color/colorDark"
+
+
+        />
+
+    <Button
+        android:id="@+id/button_send"
+        android:text="@string/send"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/main_button"
+        android:textSize="22sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="25dp"/>
 
 </LinearLayout>
