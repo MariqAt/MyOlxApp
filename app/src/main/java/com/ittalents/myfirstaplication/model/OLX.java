@@ -17,6 +17,8 @@ public class OLX {
 
     public static TreeSet<RegularUser> loggedRegularUsers;
 
+    public static User loggedUser = null;
+
     public static TreeMap<RegularUser.Category, ArrayList<RegularUser.Notice>> ads;
 
     public static TreeMap<RegularUser.Category, TreeSet<RegularUser.Notice>> archivedAds;
@@ -42,6 +44,7 @@ public class OLX {
                 if (regularUser.getPassword().equals(password)) {
                     // System.out.println("Wolcome " + regularUser.getName());
                     this.loggedRegularUsers.add(regularUser);
+                    loggedUser = regularUser;
                     return true;
                 }
             }

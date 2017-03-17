@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText password;
     private Button loginButton;
     private Button createAccountButton;
-
+    public static User loggedUser = null;
 
 
     @Override
