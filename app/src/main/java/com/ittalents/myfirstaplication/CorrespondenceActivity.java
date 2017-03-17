@@ -37,7 +37,7 @@ public class CorrespondenceActivity extends AppCompatActivity {
         send = (Button) findViewById(R.id.button_send);
 
         List<String> spinnerArray = new ArrayList<String>();
-        for (User user : OLX.loggedUser.messages.keySet()) {
+        for (User user : MainActivity.loggedUser.messages.keySet()) {
             spinnerArray.add(user.getName());
         }
 
@@ -53,9 +53,9 @@ public class CorrespondenceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String text = messagedUsers.getSelectedItem().toString();
                 StringBuilder history = new StringBuilder("");
-                for (User user : OLX.loggedUser.messages.keySet()) {
+                for (User user : MainActivity.loggedUser.messages.keySet()) {
                     if (user.getName().equals(text)) {
-                        for (Message m : OLX.loggedUser.messages.get(user)) {
+                        for (Message m : MainActivity.loggedUser.messages.get(user)) {
                             history.append(m.toString());
                         }
                     }
@@ -68,9 +68,9 @@ public class CorrespondenceActivity extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for (User user : OLX.loggedUser.messages.keySet()) {
+                for (User user : MainActivity.loggedUser.messages.keySet()) {
                     if (user.getName().equals(receiverName.getText())) {
-                        OLX.loggedUser.sendMessage(user, inputMessage.getText().toString());
+                        MainActivity.loggedUser.sendMessage(user, inputMessage.getText().toString());
                     }
                 }
         });
