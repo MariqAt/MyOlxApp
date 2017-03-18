@@ -160,7 +160,7 @@ public  class RegularUser extends User {
         Category category;
         private Type type;
         private int price;
-        private String desription;
+        private String description;
         private StateGood state;
         private String mail;
         private String gsm;
@@ -169,14 +169,14 @@ public  class RegularUser extends User {
         private int id;
         // picture
 
-        public Notice(String title, Category category, Type type, int price, String desription,
+        public Notice(String title, Category category, Type type, int price, String description,
                       StateGood state) {
             this.user = RegularUser.this;
             setTitle(title);
             this.category = category;
             this.type = type;
             setPrice(price);
-            setDesription(desription);
+            setDescription(description);
             setState(state);
             this.mail = user.getMail();
             this.gsm = user.getGsm();
@@ -200,10 +200,25 @@ public  class RegularUser extends User {
             }
         }
 
-        public void setDesription(String desription) {
-            if (desription != null && !desription.isEmpty()) {
-                this.desription = desription;
+        public void setDescription(String description) {
+            if (description != null && !description.isEmpty()) {
+                this.description = description;
             }
+        }
+        public String getTitle(){
+            return this.title;
+        }
+
+        public int getPrice() {
+            return price;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public String getGsm() {
+            return gsm;
         }
 
         public void setState(RegularUser.StateGood state) {
@@ -215,7 +230,7 @@ public  class RegularUser extends User {
             System.out.println("Category: " + this.category);
             System.out.println("PRIVATE OR BUSINESS: " + this.type);
             System.out.println("Price: " + this.price + " lv");
-            System.out.println("Description: " + this.desription);
+            System.out.println("Description: " + this.description);
             System.out.println("State: " + this.state);
             System.out.println("Mail: " + this.mail);
             System.out.println("Contact person: " + this.name);

@@ -2,36 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation = "vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
+    android:orientation="vertical"
     tools:context="com.ittalents.myfirstaplication.ActiveNoticeActivity">
 
-    <TextView
-        android:id="@+id/edit_name"
+    <Spinner
+        android:id="@+id/ad_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Active Notice"
-        android:textSize = "25sp"
-        android:gravity = "center"
-        android:background="@color/colorAccent"
 
-        android:textStyle="italic"
-        android:textColor="@color/colorPrimaryDark"
-        />
-    <ImageButton
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/ad" />
-
-    <ImageButton
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/ad" />
+        android:background="@color/colorDark" />
 
 </LinearLayout>
