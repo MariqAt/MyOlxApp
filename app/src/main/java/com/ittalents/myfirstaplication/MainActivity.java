@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
     public static User loggedUser = null;
 
+    static {
+        OLX.regUser(RegularUser.createUser("Mariq", "sf", "mimi@abv.bg", "Mimi1234", "08888888888"));
+        OLX.regUser(RegularUser.createUser("Ivan", "sf", "vanka@abv.bg", "Vanka1234", "08888888889"));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

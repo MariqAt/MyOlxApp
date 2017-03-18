@@ -23,9 +23,6 @@ public class CreateAccountActivity extends AppCompatActivity {
     private Button registButton;
     private Button cancelButton;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -12,13 +12,15 @@ import java.util.ArrayList;
 
 public class OLXActivity extends AppCompatActivity {
 
-    private Button notice;
-    private ImageButton star;
+    private Button notice1;
+    private ImageButton star1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_olx);
+
 
         for (ArrayList<RegularUser.Notice> notice : OLX.ads.values()) {
            if (notice != null) {

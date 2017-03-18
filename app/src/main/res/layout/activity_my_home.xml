@@ -28,12 +28,18 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        android:minHeight="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:titleTextColor="@android:color/background_dark"
-        android:background="@drawable/button2">
+        android:background="@drawable/button2"
+        android:minHeight="30dp"
+        app:titleTextColor="@android:color/background_dark">
 
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/menu8"
+            android:background="@color/colorDark"
+            android:onClick="showPopup" />
 
     </android.support.v7.widget.Toolbar>
 
