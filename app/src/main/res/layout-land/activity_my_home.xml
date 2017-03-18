@@ -52,8 +52,6 @@
                     android:background="@color/colorDark"
                     android:onClick="showPopup" />
 
-
-
             </android.support.v7.widget.Toolbar>
 
             <LinearLayout

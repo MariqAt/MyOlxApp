@@ -2,26 +2,32 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/pageOlx"
         android:icon="@drawable/world"
-        android:title="OLX Page" />
+        android:title="OLX Page"
+        android:onClick="showPopup"/>
 
     <item android:id="@+id/searches"
         android:icon="@drawable/star"
-        android:title="Searches Notices" />
+        android:title="Searches Notices"
+        android:onClick="showPopup"/>
 
     <item android:id="@+id/add_notices"
         android:icon="@drawable/plus"
-        android:title="Add Notices" />
+        android:title="Add Notices"
+        android:onClick="showPopup"/>
 
     <item android:id="@+id/messages"
         android:icon="@drawable/message"
-        android:title="Messages" />
+        android:title="Messages"
+        android:onClick="showPopup"/>
 
     <item android:id="@+id/my_home"
         android:icon="@drawable/user"
-        android:title="My Home" />
+        android:title="My Home"
+        android:onClick="showPopup"/>
 
     <item android:id="@+id/exit"
         android:icon="@drawable/exit"
-        android:title="Exit" />
+        android:title="Exit"
+        android:onClick="showPopup"/>
 
 </menu>

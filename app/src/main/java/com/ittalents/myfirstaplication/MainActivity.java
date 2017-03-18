@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                        bagaj.putSerializable("user", loggedUser);
                        intent.putExtras(bagaj);
                        startActivity(intent);
-                       finish();
                    }
                }
            }
