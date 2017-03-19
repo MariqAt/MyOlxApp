@@ -13,7 +13,7 @@ import java.util.TreeSet;
 public class OLX {
 
 
-    public static  TreeSet<RegularUser> regularUsers;
+    public static TreeSet<RegularUser> regularUsers;
     // mail -> password -> user
     // HashMap<String, TreeSet<RegularUser>> regularUsers;
 
@@ -34,27 +34,37 @@ public class OLX {
         this.archivedAds = new TreeMap<RegularUser.Category, TreeSet<RegularUser.Notice>>();
     }
 
-    public static void regUser(RegularUser user) {regularUsers.add(user);}
+    public static void regUser(RegularUser user) {
+        regularUsers.add(user);
+    }
 
     public boolean logInUser(String mail, String password) {
         for (RegularUser regularUser : regularUsers) {
             if (regularUser.getMail().equals(mail)) {
                 if (regularUser.getPassword().equals(password)) {
-                    // System.out.println("Wolcome " + regularUser.getName());
+                    // System.out.println("Welcome " + regularUser.getName());
                     this.loggedRegularUsers.add(regularUser);
                     MainActivity.loggedUser = regularUser;
                     return true;
                 }
             }
         }
-        //System.out.println("Your mail or your password aren't correct! Please, try again!");
+
+        if (Admin.getCreatedInstance() != null && Admin.getCreatedInstance().getMail().equals(mail) && Admin.getCreatedInstance().getPassword().equals(password)) {
+            MainActivity.loggedUser = Admin.getCreatedInstance();
+            return true;
+        }
+
+
         return false;
     }
 
     public void logOutUser(RegularUser user) {
-        for (RegularUser regularUser : loggedRegularUsers) {
-            if (regularUser.equals(user)) {
-                this.loggedRegularUsers.remove(regularUser);
+        if (MainActivity.loggedUser != Admin.getCreatedInstance()) {
+            for (RegularUser regularUser : loggedRegularUsers) {
+                if (regularUser.equals(user)) {
+                    this.loggedRegularUsers.remove(regularUser);
+                }
             }
         }
     }

@@ -11,6 +11,9 @@
     <string name="registration_button">REGISTRATION</string>
 
     <string name="category_prompt">ESTATE</string>
+    <string name="active_ads">Active Ads</string>
+    <string name="archived_ads">Archived Ads</string>
+    <string name="messaged_users">Messaged Users</string>
     <string-array name="category_arrays">
         <item>ESTATE</item>
         <item>ANIMALS</item>

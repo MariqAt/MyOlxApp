@@ -31,7 +31,7 @@ public class CorrespondenceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_correspondence);
 
         messageHistory = (TextView) findViewById(R.id.message_history);
-        messagedUsers = (Spinner) findViewById(R.id.messagedUsers);
+        messagedUsers = (Spinner) findViewById(R.id.messaged_users);
         inputMessage = (TextView) findViewById(R.id.input_message);
         receiverName = (TextView) findViewById(R.id.receiver_name);
         send = (Button) findViewById(R.id.button_send);

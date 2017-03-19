@@ -12,7 +12,7 @@
         android:id="@+id/ad_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:prompt="@string/active_ads"
         android:background="@color/colorDark" />
 
 </LinearLayout>

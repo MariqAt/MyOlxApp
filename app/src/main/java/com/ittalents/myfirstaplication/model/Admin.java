@@ -4,15 +4,18 @@ package com.ittalents.myfirstaplication.model;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.TreeSet;
+
 import com.ittalents.myfirstaplication.model.RegularUser.Notice;
 import com.ittalents.myfirstaplication.model.RegularUser.SortNotice;
+
 public class Admin extends User {
 
     OLX olx;
 
     private static Admin instance;
 
-    public static ArrayList<Notice> pendingAds = new ArrayList<Notice>();;
+    public static ArrayList<Notice> pendingAds = new ArrayList<Notice>();
+    ;
 
     private Admin(String name, String address, String mail, String password, String gsm, OLX olx) {
         super(name, address, mail, password, gsm);
@@ -27,8 +30,8 @@ public class Admin extends User {
     }
 
     public static Admin getCreatedInstance() {
+        return instance != null ? instance : null;
 
-        return instance;
     }
 
     public void reviewAds() {
@@ -40,38 +43,26 @@ public class Admin extends User {
         }
     }
 
-    private void approveAd(Notice n) {
-        Scanner sc = new Scanner(System.in);
+    public void approveAd(Notice n) {
 
-        System.out.println("Do you approve this add, YES or NO");
 
-        String approved;
-
-        do {
-            approved = sc.next();
-        } while (!(approved.equals("YES") || approved.equals("NO")));
-
-        if (approved.equals("YES")) {
-
-            if (olx.ads.containsKey(n.getCategory())) {
-                olx.ads.get(n.getCategory()).add(n);
-            } else {
-
-                olx.ads.put(n.getCategory(), new ArrayList<Notice>());
-                olx.ads.get(n.getCategory()).add(n);
-            }
-            if (!n.getOuterType().poster.containsKey(SortNotice.ACTIVE)) {
-                n.getOuterType().poster.put(SortNotice.ACTIVE, new TreeSet<Notice>());
-            }
-            n.getOuterType().poster.get(SortNotice.ACTIVE).add(n);
-
-            if (!olx.ads.containsKey(n.category)) {
-                olx.ads.put(n.category, new ArrayList<Notice>());
-            }
-            olx.ads.get(n.category).add(n);
+        if (olx.ads.containsKey(n.getCategory())) {
+            olx.ads.get(n.getCategory()).add(n);
         } else {
-            System.out.println("Add is not approved");
+
+            olx.ads.put(n.getCategory(), new ArrayList<Notice>());
+            olx.ads.get(n.getCategory()).add(n);
         }
+        if (!n.getOuterType().poster.containsKey(SortNotice.ACTIVE)) {
+            n.getOuterType().poster.put(SortNotice.ACTIVE, new TreeSet<Notice>());
+        }
+        n.getOuterType().poster.get(SortNotice.ACTIVE).add(n);
+
+        if (!olx.ads.containsKey(n.category)) {
+            olx.ads.put(n.category, new ArrayList<Notice>());
+        }
+        olx.ads.get(n.category).add(n);
+
     }
 
     public void deleteAd(Notice notice) {

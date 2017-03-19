@@ -60,6 +60,14 @@ public abstract class User implements Comparable<User>, Serializable {
         return this.gsm;
     }
 
+    public static boolean logInOlx(String mail, String password) {
+        boolean isLog = false;
+        isLog = OLX.getInstance().logInUser(mail, password);
+        return isLog;
+    }
+
+
+
     public void sendMessage(User receiver, String content) {
 
         if (!this.messages.containsKey(receiver)) {

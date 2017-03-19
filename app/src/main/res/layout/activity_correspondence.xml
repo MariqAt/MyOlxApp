@@ -25,9 +25,9 @@
         android:id="@+id/messaged_users"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:prompt="@string/messaged_user"
         android:background="@color/colorPrimary"
-        android:prompt="@string/state_prompt" />
+         />
 
     <TextView
         android:id="@+id/message_history"

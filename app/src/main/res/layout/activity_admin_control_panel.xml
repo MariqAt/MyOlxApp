@@ -29,12 +29,12 @@
         android:adjustViewBounds="false"
         android:cropToPadding="false"
         android:src="@drawable/admin" />
-    <Button
+    <TextView
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryDark"
-        android:text="Review Pending Ads"
+        android:text="Approve Pending Ads"
         android:textStyle="bold"
         android:textSize="20sp"
         android:background="@color/colorPrimary"
@@ -42,7 +42,14 @@
         android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
-    <Button
+
+    <Spinner
+        android:id="@+id/approve_pending_ads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/active_ads"
+        android:background="@color/colorDark" />
+    <TextView
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,7 +62,14 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         />
-    <Button
+
+    <Spinner
+        android:id="@+id/delete_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/active_ads"
+        android:background="@color/colorDark" />
+    <TextView
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,8 +82,15 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
-    <Button
 
+    <Spinner
+        android:id="@+id/archive_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/active_ads"
+        android:background="@color/colorDark" />
+    <Button
+        android:id="@+id/review_messages"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryDark"
@@ -81,17 +102,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
-    <Button
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
-        android:text="Review Messages"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:background="@color/colorPrimary"
 
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+
 </LinearLayout>

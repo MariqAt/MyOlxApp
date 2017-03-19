@@ -24,6 +24,6 @@
         android:id="@+id/ad_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:prompt="@string/archived_ads"
         android:background="@color/colorDark" />
 </LinearLayout>
