@@ -22,6 +22,7 @@ public abstract class User implements Comparable<User>, Serializable {
     private String gsm;
     private String password;
 
+    static int uniqueID = 1;
 
     public TreeMap<User, TreeSet<Message>> messages;
 

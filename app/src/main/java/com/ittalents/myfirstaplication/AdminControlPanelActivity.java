@@ -117,7 +117,7 @@ public class AdminControlPanelActivity extends AppCompatActivity {
         reviewMessages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AdminControlPanelActivity.this, MessageActivity.class);
+                Intent i = new Intent(AdminControlPanelActivity.this, CorrespondenceActivity.class);
                 startActivity(i);
             }
         });

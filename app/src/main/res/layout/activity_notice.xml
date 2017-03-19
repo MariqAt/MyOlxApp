@@ -17,7 +17,7 @@
         />
 
     <EditText
-        android:id="@+id/edit_title"
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Title"
@@ -31,7 +31,7 @@
         android:layout_marginEnd="25dp"/>
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/category_arrays"
@@ -39,7 +39,7 @@
         android:prompt="@string/category_prompt" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/type"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/ownerType_arrays"
@@ -47,7 +47,7 @@
         android:prompt="@string/ownerType_prompt" />
 
     <EditText
-        android:id="@+id/edit_password"
+        android:id="@+id/price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Price"
@@ -61,7 +61,7 @@
 
 
     <EditText
-        android:id="@+id/edit_description"
+        android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Description"
@@ -72,14 +72,14 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp" />
     <Spinner
-        android:id="@+id/spinner3"
+        android:id="@+id/state"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/state_arrays"
         android:background="@color/colorPrimary"
         android:prompt="@string/state_prompt" />
     <Button
-
+        android:id="@+id/add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryDark"

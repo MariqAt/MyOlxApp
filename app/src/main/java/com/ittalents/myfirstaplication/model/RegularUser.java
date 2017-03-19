@@ -18,7 +18,7 @@ import java.util.TreeSet;
 public  class RegularUser extends User {
 
     public enum Category {
-        ESTATES, ANIMALS, FASHION
+        ESTATES, ANIMALS, FASHION, ELECTRONICS
     }
 
     public enum Type {
@@ -37,7 +37,7 @@ public  class RegularUser extends User {
     public TreeMap<SortNotice, TreeSet<Notice>> poster;
     public TreeSet<Notice> view;
 
-    private static int uniqueID = 1;
+
 
     private RegularUser(String name, String address, String mail, String password, String gsm) {
         super(name, address, mail, password, gsm);
@@ -165,21 +165,22 @@ public  class RegularUser extends User {
         private int id;
         // picture
 
+
         public Notice(String title, Category category, Type type, int price, String description,
                       StateGood state) {
-            this.user = RegularUser.this;
+            this.user = (RegularUser) MainActivity.loggedUser;
             setTitle(title);
             this.category = category;
             this.type = type;
             setPrice(price);
             setDescription(description);
             setState(state);
-            this.mail = user.getMail();
-            this.gsm = user.getGsm();
-            this.name = user.getName();
+            this.mail = MainActivity.loggedUser.getMail();
+            this.gsm = MainActivity.loggedUser.getGsm();
+            this.name = MainActivity.loggedUser.getName();
             this.date = new Date();
             this.id = uniqueID;
-            RegularUser.this.uniqueID++;
+            MainActivity.loggedUser.uniqueID++;
         }
 
         public void setTitle(String title) {

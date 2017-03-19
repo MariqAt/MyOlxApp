@@ -75,7 +75,7 @@ public class MyHomeActivity extends AppCompatActivity {
         allMessagesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MyHomeActivity.this, MessageActivity.class);
+                Intent intent = new Intent(MyHomeActivity.this, CorrespondenceActivity.class);
                 MyHomeActivity.this.startActivity(intent);
             }
         });
