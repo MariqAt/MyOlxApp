@@ -1,5 +1,7 @@
 package com.ittalents.myfirstaplication.model;
 
+import com.ittalents.myfirstaplication.MainActivity;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;

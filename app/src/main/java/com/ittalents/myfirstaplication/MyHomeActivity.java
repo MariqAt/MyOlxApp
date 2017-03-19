@@ -115,8 +115,7 @@ public class MyHomeActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public void showPopup (MenuItem item) {
         switch (item.getItemId()) {
             case R.id.pageOlx:
                 Intent intent = new Intent(MyHomeActivity.this, OLXActivity.class);
@@ -135,14 +134,14 @@ public class MyHomeActivity extends AppCompatActivity {
                 this.startActivity(intent4);
                 break;
             case R.id.my_home:
-                Intent intent5 = new Intent(this, MyHomeActivity.class);
-                this.startActivity(intent5);
                 break;
             case R.id.exit:
-                Toast.makeText(this, "Ypu choose Exit page", Toast.LENGTH_SHORT).show();
+                RegularUser user = (RegularUser) MainActivity.loggedUser;
+                user.logOutOlx();
+                Intent intent5 = new Intent(this, MainActivity.class);
+                startActivity(intent5);
                 break;
         }
-        return true;
     }
 
 }

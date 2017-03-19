@@ -16,7 +16,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:titleTextColor="@android:color/background_dark"
-        android:background="@color/colorAccent">
+        android:background="@drawable/button2"
+        android:gravity="center">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/menu8"
+            android:background="@color/colorDark"
+            android:onClick="showPopup" />
 
     </android.support.v7.widget.Toolbar>
 
