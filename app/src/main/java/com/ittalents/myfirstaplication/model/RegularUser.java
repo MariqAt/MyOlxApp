@@ -43,6 +43,8 @@ public  class RegularUser extends User {
         super(name, address, mail, password, gsm);
 
         this.poster = new TreeMap<>();
+        poster.put(SortNotice.ACTIVE, new TreeSet<Notice>());
+        poster.put(SortNotice.ARCHIVE, new TreeSet<Notice>());
         this.view = new TreeSet<>();
     }
 

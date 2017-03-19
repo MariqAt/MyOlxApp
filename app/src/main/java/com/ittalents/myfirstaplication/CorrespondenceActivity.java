@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ittalents.myfirstaplication.model.Message;
 import com.ittalents.myfirstaplication.model.User;
@@ -37,43 +38,47 @@ public class CorrespondenceActivity extends AppCompatActivity {
         send = (Button) findViewById(R.id.button_send);
 
         List<String> spinnerArray = new ArrayList<String>();
-        for (User user : MainActivity.loggedUser.messages.keySet()) {
-            spinnerArray.add(user.getName());
-        }
+        if(!MainActivity.loggedUser.messages.isEmpty()) {
+            for (User user : MainActivity.loggedUser.messages.keySet()) {
+                spinnerArray.add(user.getName());
+            }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                this, android.R.layout.simple_spinner_item, spinnerArray);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                    this, android.R.layout.simple_spinner_item, spinnerArray);
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        messagedUsers.setAdapter(adapter);
+            messagedUsers.setAdapter(adapter);
 
-        messagedUsers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String text = messagedUsers.getSelectedItem().toString();
-                StringBuilder history = new StringBuilder("");
-                for (User user : MainActivity.loggedUser.messages.keySet()) {
-                    if (user.getName().equals(text)) {
-                        for (Message m : MainActivity.loggedUser.messages.get(user)) {
-                            history.append(m.toString());
+            messagedUsers.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String text = messagedUsers.getSelectedItem().toString();
+                    StringBuilder history = new StringBuilder("");
+                    for (User user : MainActivity.loggedUser.messages.keySet()) {
+                        if (user.getName().equals(text)) {
+                            for (Message m : MainActivity.loggedUser.messages.get(user)) {
+                                history.append(m.toString());
+                            }
+                        }
+                    }
+
+                    messageHistory.setText(history);
+                }
+            });
+
+            send.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    for (User user : MainActivity.loggedUser.messages.keySet()) {
+                        if (user.getName().equals(receiverName.getText())) {
+                            MainActivity.loggedUser.sendMessage(user, inputMessage.getText().toString());
                         }
                     }
                 }
-
-                messageHistory.setText(history);
-            }
-        });
-
-        send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                for (User user : MainActivity.loggedUser.messages.keySet()) {
-                    if (user.getName().equals(receiverName.getText())) {
-                        MainActivity.loggedUser.sendMessage(user, inputMessage.getText().toString());
-                    }
-                }
-            }
-        });
+            });
+        } else{
+            Toast.makeText(CorrespondenceActivity.this, "You have no messages yet.", Toast.LENGTH_SHORT).show();
+        }
     }
     }

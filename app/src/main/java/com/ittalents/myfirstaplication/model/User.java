@@ -62,7 +62,7 @@ public abstract class User implements Comparable<User>, Serializable {
     }
 
     public static boolean logInOlx(String mail, String password) {
-        boolean isLog = false;
+        boolean isLog;
         isLog = OLX.getInstance().logInUser(mail, password);
         return isLog;
     }

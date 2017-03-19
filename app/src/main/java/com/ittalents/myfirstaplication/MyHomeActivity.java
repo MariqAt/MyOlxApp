@@ -51,7 +51,7 @@ public class MyHomeActivity extends AppCompatActivity {
         addNoticeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MyHomeActivity.this, AdActivity.class);
+                Intent intent = new Intent(MyHomeActivity.this, NoticeActivity.class);
                 MyHomeActivity.this.startActivity(intent);
             }
         });
