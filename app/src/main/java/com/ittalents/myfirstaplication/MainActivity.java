@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         //RegularUser.Notice noticeM1 = mimi.new Notice("Balna Roklq", RegularUser.Category.FASHION, RegularUser.Type.PRIVATE, 100, "size: M", RegularUser.StateGood.NEW);
         //mimi.addNotice(noticeM1);
-        //allNotices.add(noticeM1);
+       // allNotices.add(noticeM1);
 
         RegularUser vanka = RegularUser.createUser("Ivan", "sf", "vanka@abv.bg", "Vanka1234", "08888888889");
         OLX.regUser(vanka);

@@ -59,10 +59,10 @@ public  class RegularUser extends User {
     }
 
     public void addNotice(Notice n) {
-        Admin.getCreatedInstance().pendingAds.add(n);
+       // Admin.getCreatedInstance().pendingAds.add(n);
 
         poster.get(SortNotice.ACTIVE).add(n);
-        //OLX.getInstance().addNoticeOLX(n);
+        OLX.getInstance().addNoticeOLX(n);
     }
 
     public void deleteNotice(RegularUser.Notice n) {

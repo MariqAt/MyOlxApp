@@ -37,14 +37,14 @@ public class OLX {
     }
 
 
-  /*
+
     public static void addNoticeOLX(RegularUser.Notice notice) {
         if (!ads.containsKey(notice.getCategory())) {
             ads.put(notice.getCategory(), new ArrayList<RegularUser.Notice>());
         }
         ads.get(notice.getCategory()).add(notice);
     }
-   */
+
 
 
     public boolean logInUser(String mail, String password) {
