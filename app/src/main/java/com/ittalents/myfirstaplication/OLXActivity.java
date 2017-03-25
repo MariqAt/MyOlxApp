@@ -25,6 +25,15 @@ public class OLXActivity extends AppCompatActivity {
     private ImageButton star1;
     private HorizontalScrollView scView;
 
+    private ImageView image2;
+    private TextView title2;
+    private TextView description2;
+    private TextView price2;
+    private Button viewButton2;
+    private ImageButton star2;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,20 +46,47 @@ public class OLXActivity extends AppCompatActivity {
         viewButton1 = (Button) findViewById(R.id.view_button1);
         star1 = (ImageButton) findViewById(R.id.button_star1);
 
-        image1.setImageResource(R.drawable.dress1);
-        title1.setText("Бална Рокля");
-        description1.setText("Размер: универсален; Цвят: син; Плат: еластант");
-        price1.setText("500 лв");
+        image2 = (ImageView) findViewById(R.id.image_notice2);
+        title2 = (TextView) findViewById(R.id.title_notice2);
+        description2 = (TextView) findViewById(R.id.desc_notice2);
+        price2 = (TextView) findViewById(R.id.price_notice2);
+        viewButton2 = (Button) findViewById(R.id.view_button2);
+        star2 = (ImageButton) findViewById(R.id.button_star2);
 
+        if (MainActivity.allNotices.get(0) != null) {
+            final RegularUser.Notice n = MainActivity.allNotices.get(0);
+            image1.setImageResource(n.getPictureID());
+            title1.setText(n.getTitle());
+            description1.setText(n.getDescription());
+            price1.setText(n.getPrice()+"");
 
-        viewButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(OLXActivity.this, ViewNoticeActivity.class);
+            viewButton1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(OLXActivity.this, AdActivity.class);
+                    intent.putExtra("notice", n);
+                    startActivity(intent);
+                }
+            });
 
-                startActivity(intent);
-            }
-        });
+        }
+
+        if (MainActivity.allNotices.get(1) != null) {
+            final RegularUser.Notice n = MainActivity.allNotices.get(1);
+            image2.setImageResource(n.getPictureID());
+            title2.setText(n.getTitle());
+            description2.setText(n.getDescription());
+            price2.setText(n.getPrice()+"");
+
+            viewButton2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(OLXActivity.this, AdActivity.class);
+                    intent.putExtra("notice", n);
+                    startActivity(intent);
+                }
+            });
+        }
 
     }
     public void showPopup(View v) {
@@ -76,11 +112,11 @@ public class OLXActivity extends AppCompatActivity {
                 this.startActivity(intent2);
                 break;
             case R.id.add_notices:
-                Intent intent3 = new Intent(this, AdActivity.class);
+                Intent intent3 = new Intent(this, NoticeActivity.class);
                 this.startActivity(intent3);
                 break;
             case R.id.messages:
-                Intent intent4 = new Intent(this, NoticeActivity.class);
+                Intent intent4 = new Intent(this, CorrespondenceActivity.class);
                 this.startActivity(intent4);
                 break;
             case R.id.my_home:
@@ -88,7 +124,7 @@ public class OLXActivity extends AppCompatActivity {
                 startActivity(intent5);
                 break;
             case R.id.exit:
-                RegularUser user = (RegularUser) MainActivity.loggedUser;
+                RegularUser user = (RegularUser) MainActivity.loggedRegularUser;
                 user.logOutOlx();
                 Intent intent6 = new Intent(this, MainActivity.class);
                 this.startActivity(intent6);

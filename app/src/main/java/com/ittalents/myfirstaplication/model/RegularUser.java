@@ -172,7 +172,7 @@ public  class RegularUser extends User {
 
 
         public Notice(String title, Category category, Type type, int price, String description,
-                      StateGood state) {
+                      StateGood state, int pictureID) {
             this.user = (RegularUser) MainActivity.loggedRegularUser;
             setTitle(title);
             this.category = category;
@@ -180,7 +180,7 @@ public  class RegularUser extends User {
             setPrice(price);
             setDescription(description);
             setState(state);
-            //this.pictureID = pictureID;
+            this.pictureID = pictureID;
             this.mail = MainActivity.loggedRegularUser.getMail();
             this.gsm = MainActivity.loggedRegularUser.getGsm();
             this.name = MainActivity.loggedRegularUser.getName();
@@ -226,6 +226,26 @@ public  class RegularUser extends User {
 
         public String getGsm() {
             return gsm;
+        }
+
+        public Type getType() {
+            return type;
+        }
+
+        public StateGood getState() {
+            return state;
+        }
+
+        public String getMail() {
+            return mail;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public Date getDate() {
+            return date;
         }
 
         public void setState(RegularUser.StateGood state) {

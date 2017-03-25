@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/my_notice"
                 android:textStyle="italic"
-                android:textAlignment="center"
+                android:gravity="center"
                 android:textColor="@color/colorDark"
                 android:textSize="22sp"
                 android:background="@drawable/button3"
@@ -109,15 +109,16 @@
                 android:layout_weight="7"/>
 
             <TextView
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button3"
                 android:text="@string/messages"
-                android:textStyle="italic"
-                android:textAlignment="center"
+                android:gravity="center"
                 android:textColor="@color/colorDark"
                 android:textSize="22sp"
-                android:background="@drawable/button3"
-                android:layout_marginTop="20dp"/>
+                android:textStyle="italic" />
 
             <Button
                 android:id="@+id/all_messages_button"
@@ -139,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:text="Useful Contact"
                 android:textStyle="italic"
-                android:textAlignment="center"
+                android:gravity="center"
                 android:textColor="@color/colorDark"
                 android:textSize="22sp"
                 android:background="@drawable/button3"

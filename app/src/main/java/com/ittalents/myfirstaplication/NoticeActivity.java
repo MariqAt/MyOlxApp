@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class NoticeActivity extends AppCompatActivity {
     private EditText price;
     private EditText description;
     private Spinner state;
+    private ImageView picture;
     private Button add;
 
     private String adTitle;
@@ -45,6 +47,7 @@ public class NoticeActivity extends AppCompatActivity {
         price = (EditText) findViewById(R.id.price);
         description = (EditText) findViewById(R.id.description);
         state = (Spinner) findViewById(R.id.state);
+        picture = (ImageView) findViewById(R.id.view_picture1);
 
         add = (Button) findViewById(R.id.add);
 
@@ -137,7 +140,7 @@ public class NoticeActivity extends AppCompatActivity {
                     adPrice = Integer.parseInt(price.getText().toString());
                     adDescription = description.getText().toString();
 
-                    RegularUser.Notice n = MainActivity.loggedRegularUser.new Notice(adTitle, adCategory, adType, adPrice, adDescription, adState);
+                    RegularUser.Notice n = MainActivity.loggedRegularUser.new Notice(adTitle, adCategory, adType, adPrice, adDescription, adState, Integer.parseInt(picture.toString()));
                     MainActivity.loggedRegularUser.addNotice(n);
 
                     Intent intent = new Intent(NoticeActivity.this, MyHomeActivity.class);

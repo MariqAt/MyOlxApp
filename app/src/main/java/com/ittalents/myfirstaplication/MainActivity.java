@@ -29,10 +29,13 @@ public class MainActivity extends AppCompatActivity {
     static {
         RegularUser mimi = RegularUser.createUser("Mariq", "sf", "mimi@abv.bg", "Mimi1234", "08888888888");
         OLX.regUser(mimi);
-
-        //RegularUser.Notice noticeM1 = mimi.new Notice("Balna Roklq", RegularUser.Category.FASHION, RegularUser.Type.PRIVATE, 100, "size: M", RegularUser.StateGood.NEW);
-        //mimi.addNotice(noticeM1);
-       // allNotices.add(noticeM1);
+        loggedRegularUser = mimi;
+        RegularUser.Notice noticeM1 = mimi.new Notice("Бална Рокля", RegularUser.Category.FASHION, RegularUser.Type.PRIVATE, 500, "Размер: универсален; Цвят: син; Плат: еластант", RegularUser.StateGood.NEW, R.drawable.dress1);
+        RegularUser.Notice noticeM2 = mimi.new Notice("Парти Рокля", RegularUser.Category.FASHION, RegularUser.Type.PRIVATE, 350, "Размер: M; Цвят: червен; Плат: коприна", RegularUser.StateGood.NEW, R.drawable.dress2);
+        mimi.addNotice(noticeM1);
+        allNotices.add(noticeM1);
+        mimi.addNotice(noticeM2);
+        allNotices.add(noticeM2);
 
         RegularUser vanka = RegularUser.createUser("Ivan", "sf", "vanka@abv.bg", "Vanka1234", "08888888889");
         OLX.regUser(vanka);
@@ -58,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
                        Toast.makeText(MainActivity.this, "Your mail or your password aren't correct! Please, try again to create your account!", Toast.LENGTH_LONG).show();
                    } else {
                        Toast.makeText(MainActivity.this, "Login successfull!", Toast.LENGTH_SHORT).show();
+
+
                        Intent intent = new Intent(MainActivity.this, MyHomeActivity.class);
                        Bundle bagaj = new Bundle();
                        bagaj.putSerializable("user", loggedRegularUser);

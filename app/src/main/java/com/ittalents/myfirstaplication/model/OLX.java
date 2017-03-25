@@ -53,7 +53,7 @@ public class OLX {
                 if (regularUser.getPassword().equals(password)) {
                     // System.out.println("Welcome " + regularUser.getName());
                     this.loggedRegularUsers.add(regularUser);
-                    MainActivity.loggedUser = regularUser;
+                    MainActivity.loggedRegularUser = regularUser;
                     return true;
                 }
             }

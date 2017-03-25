@@ -28,7 +28,6 @@
         <activity android:name=".MyHomeActivity" />
         <activity android:name=".NoticeActivity" />
         <activity android:name=".SearchesActivity" />
-        <activity android:name=".ViewNoticeActivity"></activity>
     </application>
 
 </manifest>

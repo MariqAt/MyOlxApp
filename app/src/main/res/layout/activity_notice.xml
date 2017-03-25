@@ -80,6 +80,11 @@
         android:background="@color/colorPrimary"
         android:prompt="@string/state_prompt" />
 
+    <ImageView
+        android:id="@+id/view_picture1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"/>
 
     <Button
         android:id="@+id/preview"

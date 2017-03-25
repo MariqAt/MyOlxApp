@@ -14,7 +14,6 @@
         android:layout_height="0dp"
         android:layout_weight="0.4"
         android:text="@string/name"
-        android:letterSpacing="6"
         android:textStyle="italic"
         android:fontFamily="serif"
         android:textColor="@color/colorDark"
@@ -38,7 +37,6 @@
         android:layout_height="0dp"
         android:layout_weight="0.4"
         android:text="@string/address"
-        android:letterSpacing="6"
         android:textStyle="italic"
         android:fontFamily="serif"
         android:textColor="@color/colorDark"
@@ -62,7 +60,6 @@
         android:layout_height="0dp"
         android:layout_weight="0.4"
         android:text="@string/e_mail"
-        android:letterSpacing="6"
         android:textStyle="italic"
         android:fontFamily="serif"
         android:textColor="@color/colorDark"
@@ -86,7 +83,6 @@
         android:layout_height="0dp"
         android:layout_weight="0.4"
         android:text="@string/password"
-        android:letterSpacing="6"
         android:textStyle="italic"
         android:fontFamily="serif"
         android:textColor="@color/colorDark"
@@ -107,18 +103,18 @@
         android:layout_marginRight="10dp"/>
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="0.4"
-        android:text="@string/gsm_number"
-        android:letterSpacing="6"
-        android:textStyle="italic"
-        android:fontFamily="serif"
-        android:textColor="@color/colorDark"
-        android:textSize="20sp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.4"
+        android:fontFamily="serif"
+        android:text="@string/gsm_number"
+        android:textColor="@color/colorDark"
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
     <EditText
         android:id="@+id/edit_gsm"

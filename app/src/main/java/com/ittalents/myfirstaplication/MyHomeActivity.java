@@ -1,26 +1,20 @@
 package com.ittalents.myfirstaplication;
 
 import android.Manifest;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;
-import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ittalents.myfirstaplication.model.RegularUser;
-
-import java.net.URI;
 
 public class MyHomeActivity extends AppCompatActivity {
 
@@ -30,7 +24,7 @@ public class MyHomeActivity extends AppCompatActivity {
     private Button archiveNoticeButton;
     private Button allMessagesButton;
     private Button contactUsButton;
-    private PopupMenu menu;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +34,7 @@ public class MyHomeActivity extends AppCompatActivity {
 
         RegularUser u = (RegularUser) getIntent().getExtras().getSerializable("user");
         textName = (TextView) this.findViewById(R.id.text_name);
+
         textName.setText(u.getName().toString());
 
         addNoticeButton = (Button) this.findViewById(R.id.add_notice_button);
@@ -127,17 +122,17 @@ public class MyHomeActivity extends AppCompatActivity {
                 this.startActivity(intent2);
                 break;
             case R.id.add_notices:
-                Intent intent3 = new Intent(this, AdActivity.class);
+                Intent intent3 = new Intent(this, NoticeActivity.class);
                 this.startActivity(intent3);
                 break;
             case R.id.messages:
-                Intent intent4 = new Intent(this, NoticeActivity.class);
+                Intent intent4 = new Intent(this, CorrespondenceActivity.class);
                 this.startActivity(intent4);
                 break;
             case R.id.my_home:
                 break;
             case R.id.exit:
-                RegularUser user = (RegularUser) MainActivity.loggedUser;
+                RegularUser user = (RegularUser) MainActivity.loggedRegularUser;
                 user.logOutOlx();
                 Intent intent5 = new Intent(this, MainActivity.class);
                 startActivity(intent5);
