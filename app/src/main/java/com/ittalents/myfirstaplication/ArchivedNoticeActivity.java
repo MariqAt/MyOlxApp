@@ -21,8 +21,8 @@ public class ArchivedNoticeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_active_notice);
 
-        if (MainActivity.loggedUser != null) {
-            final RegularUser ru = (RegularUser) MainActivity.loggedUser;
+        if (MainActivity.loggedRegularUser != null) {
+            final RegularUser ru = (RegularUser) MainActivity.loggedRegularUser;
 
             if (!ru.poster.get(RegularUser.SortNotice.ARCHIVE).isEmpty()) {
 
@@ -62,7 +62,15 @@ public class ArchivedNoticeActivity extends AppCompatActivity {
                             }
                         }
 
-                        Intent i = AdActivity.newIntent(ArchivedNoticeActivity.this, price, gsm, title, description);
+                        Intent i = new Intent(ArchivedNoticeActivity.this, AdActivity.class);
+
+                        Bundle b = new Bundle();
+                        b.putInt("PRICE", price);
+                        b.putString("GSM", gsm);
+
+                        b.putString("TITLE", title);
+                        b.putString("DESCRIPTION", description);
+                        i.putExtras(b);
                         startActivity(i);
 
 

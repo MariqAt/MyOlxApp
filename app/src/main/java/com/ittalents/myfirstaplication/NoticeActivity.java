@@ -1,8 +1,10 @@
 package com.ittalents.myfirstaplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -58,12 +60,19 @@ public class NoticeActivity extends AppCompatActivity {
 
         category.setAdapter(adapter1);
 
-        category.setOnClickListener(new View.OnClickListener() {
+        category.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
 
             @Override
-            public void onClick(View v) {
-                adCategory = (RegularUser.Category) category.getSelectedItem();
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+
+                    adCategory =  (RegularUser.Category) category.getSelectedItem();
+
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
             }
         });
 
@@ -79,13 +88,18 @@ public class NoticeActivity extends AppCompatActivity {
 
         type.setAdapter(adapter2);
 
-        type.setOnClickListener(new View.OnClickListener() {
-
-
+        type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View v) {
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 adType = (RegularUser.Type) type.getSelectedItem();
+
             }
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+            }
+
+
         });
 
         List<RegularUser.StateGood> spinnerArray3 = new ArrayList<>();
@@ -100,13 +114,17 @@ public class NoticeActivity extends AppCompatActivity {
 
         state.setAdapter(adapter3);
 
-        state.setOnClickListener(new View.OnClickListener() {
-
-
+        state.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View v) {
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 adState = (RegularUser.StateGood) state.getSelectedItem();
             }
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+            }
+
+
         });
 
         add.setOnClickListener(new View.OnClickListener() {
@@ -118,23 +136,36 @@ public class NoticeActivity extends AppCompatActivity {
                     adTitle = title.getText().toString();
                     adPrice = Integer.parseInt(price.getText().toString());
                     adDescription = description.getText().toString();
-                    RegularUser ru = (RegularUser) MainActivity.loggedUser;
-                    RegularUser.Notice n = ru.new Notice(adTitle, adCategory, adType, adPrice, adDescription, adState);
-                    ru.addNotice(n);
+
+                    RegularUser.Notice n = MainActivity.loggedRegularUser.new Notice(adTitle, adCategory, adType, adPrice, adDescription, adState);
+                    MainActivity.loggedRegularUser.addNotice(n);
+
+                    Intent intent = new Intent(NoticeActivity.this, MyHomeActivity.class);
+                    Bundle bagaj = new Bundle();
+                    bagaj.putSerializable("user", MainActivity.loggedRegularUser);
+                    intent.putExtras(bagaj);
+                    startActivity(intent);
                 } else {
-                    Toast.makeText(NoticeActivity.this, "Incorrect data!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NoticeActivity.this, "Incorrect data", Toast.LENGTH_SHORT).show();
                 }
+
+
             }
         });
     }
 
     public boolean isNumber(String s){
         boolean itIsNumber = true;
+        String p = null;
         for (int idx = 0; idx <= s.length() - 1; idx++){
-            if(s.charAt(idx) < 0 || s.charAt(idx) >9 ){
+            if(s.charAt(idx) < '0' || s.charAt(idx) > '9'){
                 itIsNumber = false;
+               p = Integer.toString(idx);
                 break;
             }
+        }
+        if (itIsNumber){
+            Toast.makeText(NoticeActivity.this, price.getText().toString(), Toast.LENGTH_SHORT).show();
         }
         return itIsNumber;
     }

@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
     private Button createAccountButton;
 
     public static ArrayList<RegularUser.Notice> allNotices = new ArrayList<>();
-    public static User loggedUser;
-    public static RegularUser loggedRegularUser;
 
+    public static RegularUser loggedRegularUser;
+    public static User loggedUser;
     static {
         RegularUser mimi = RegularUser.createUser("Mariq", "sf", "mimi@abv.bg", "Mimi1234", "08888888888");
         OLX.regUser(mimi);
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                        Toast.makeText(MainActivity.this, "Login successfull!", Toast.LENGTH_SHORT).show();
                        Intent intent = new Intent(MainActivity.this, MyHomeActivity.class);
                        Bundle bagaj = new Bundle();
-                       bagaj.putSerializable("user", loggedUser);
+                       bagaj.putSerializable("user", loggedRegularUser);
                        intent.putExtras(bagaj);
                        startActivity(intent);
                    }

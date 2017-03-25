@@ -42,6 +42,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                 if (isValidDate()) {
                     MainActivity.loggedRegularUser = RegularUser.createUser(registName.getText().toString(), registAddress.getText().toString(),
                             registEmail.getText().toString(), registPassword.getText().toString(), registGsm.getText().toString());
+
                     OLX.loggedRegularUsers.add((RegularUser) MainActivity.loggedRegularUser);
                     Toast.makeText(CreateAccountActivity.this, "You are logged successfull", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent();
@@ -56,7 +57,6 @@ public class CreateAccountActivity extends AppCompatActivity {
         });
 
         cancelButton = (Button) this.findViewById(R.id.button_cancle);
-
 
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
