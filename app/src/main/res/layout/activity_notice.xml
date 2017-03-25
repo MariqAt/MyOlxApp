@@ -82,7 +82,7 @@
 
 
     <Button
-        android:id="@+id/add"
+        android:id="@+id/preview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryDark"
@@ -93,7 +93,7 @@
         android:layout_margin="30dp"/>
 
     <Button
-
+        android:id="@+id/add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryDark"

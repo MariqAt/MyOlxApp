@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -18,14 +19,22 @@ import java.util.List;
 public class ActiveNoticeActivity extends AppCompatActivity {
     private Spinner adList;
 
+    int price;
+
+    String gsm;
+
+    String title;
+    String description;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_active_notice);
 
         adList = (Spinner) findViewById(R.id.ad_list);
-        if (MainActivity.loggedUser != null) {
-            final RegularUser ru = (RegularUser) MainActivity.loggedUser;
+        if (MainActivity.loggedRegularUser != null) {
+            final RegularUser ru = (RegularUser) MainActivity.loggedRegularUser;
 
             if (!ru.poster.get(RegularUser.SortNotice.ACTIVE).isEmpty()) {
 
@@ -43,15 +52,17 @@ public class ActiveNoticeActivity extends AppCompatActivity {
 
                 adList.setAdapter(adapter);
 
-                adList.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String text = adList.getSelectedItem().toString();
-                        int price = 0;
-                        String gsm = null;
+                adList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
-                        String title = null;
-                        String description = null;
+                    @Override
+                    public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                        String text = adList.getSelectedItem().toString();
+                        price = 0;
+                        gsm = null;
+
+                        title = null;
+                        description = null;
+
                         for (RegularUser.Notice n : ru.poster.get(RegularUser.SortNotice.ACTIVE)) {
                             if (n.getTitle().equals(text)) {
                                 price = n.getPrice();
@@ -63,10 +74,23 @@ public class ActiveNoticeActivity extends AppCompatActivity {
                             }
                         }
 
-                        Intent i = AdActivity.newIntent(ActiveNoticeActivity.this, price, gsm, title, description);
+
+                        Intent i = new Intent(ActiveNoticeActivity.this, AdActivity.class);
+                        Bundle b = new Bundle();
+                        b.putInt("PRICE", price);
+                        b.putString("GSM", gsm);
+
+                        b.putString("TITLE", title);
+                        b.putString("DESCRIPTION", description);
+                        i.putExtras(b);
                         startActivity(i);
 
 
+
+                    }
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parentView) {
+                        // your code here
                     }
                 });
             } else{

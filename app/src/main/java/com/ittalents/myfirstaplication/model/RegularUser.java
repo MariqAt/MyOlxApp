@@ -181,12 +181,12 @@ public  class RegularUser extends User {
             setDescription(description);
             setState(state);
             //this.pictureID = pictureID;
-            this.mail = MainActivity.loggedUser.getMail();
-            this.gsm = MainActivity.loggedUser.getGsm();
-            this.name = MainActivity.loggedUser.getName();
+            this.mail = MainActivity.loggedRegularUser.getMail();
+            this.gsm = MainActivity.loggedRegularUser.getGsm();
+            this.name = MainActivity.loggedRegularUser.getName();
             this.date = new Date();
             this.id = uniqueID;
-            MainActivity.loggedUser.uniqueID++;
+            MainActivity.loggedRegularUser.uniqueID++;
         }
 
         public void setTitle(String title) {
