@@ -23,259 +23,105 @@
         
     </android.support.v7.widget.Toolbar>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TableLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TableRow>
-                <RelativeLayout>
-                    <Button
-                        android:id="@+id/notice_dress1_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/dress1"
-                        android:minHeight="80dp"
-                        android:text="Party Dress"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/main_button"
-                        android:textColor="@android:color/black"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                    <ImageButton
-                        android:id="@+id/star1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/star"
-                        android:background="#88888888"
-                        android:layout_toEndOf="@+id/notice_dress1_button"
-                        android:layout_toRightOf="@+id/notice_dress1_button" />
-                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="0dp"
+                    android:layout_weight="2">
 
-                <RelativeLayout>
-                    <Button
-                        android:id="@+id/notice_dress2_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/dress2"
-                        android:minHeight="80dp"
-                        android:text=" Red Dress  "
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/main_button"
-                        android:textColor="@android:color/black"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
 
-                    <ImageButton
-                        android:id="@+id/star2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/star"
-                        android:layout_toRightOf="@id/notice_dress2_button"
-                        android:background="#88888888"/>
+                        <ImageView
+                            android:id="@+id/image_notice1"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/button4"/>
 
-                </RelativeLayout>
-            </TableRow>
+                        <ImageButton
+                            android:id="@+id/button_star1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:src="@drawable/star"/>
 
-            <TableRow>
-                <RelativeLayout>
-                    <Button
-                        android:id="@+id/notice_suit_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/suit"
-                        android:minHeight="80dp"
-                        android:text="         Suit          "
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/main_button"
-                        android:textColor="@android:color/black"/>
+                    </LinearLayout>
 
-                    <ImageButton
-                        android:id="@+id/star3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/star"
-                        android:background="#88888888"
-                        android:layout_toEndOf="@+id/notice_suit_button"
-                        android:layout_toRightOf="@+id/notice_suit_button"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                </RelativeLayout>
+                        <TextView
+                            android:id="@+id/title_notice1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button6"
+                            android:textColor="@color/colorDark"
+                            android:hint="Title" />
 
-                <RelativeLayout>
-                    <Button
-                        android:id="@+id/notice_tshirt_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/tshirt"
-                        android:minHeight="80dp"
-                        android:text="     T-shirt      "
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/main_button"
-                        android:textColor="@android:color/black"/>
+                        <HorizontalScrollView
+                            android:id="@+id/sc_view1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
 
-                    <ImageButton
-                        android:id="@+id/star4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/star"
-                        android:layout_toRightOf="@id/notice_tshirt_button"
-                        android:background="#88888888"/>
+                            <TextView
+                                android:id="@+id/desc_notice1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textColor="@color/colorDark"
+                                android:background="@drawable/button6"
+                                android:hint="Description" />
 
-                </RelativeLayout>
-            </TableRow>
+                        </HorizontalScrollView>
 
-            <TableRow>
+                        <TextView
+                            android:id="@+id/price_notice1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorDark"
+                            android:background="@drawable/button6"
+                            android:hint="Price" />
+                    </LinearLayout>
+                </LinearLayout>
 
-                <RelativeLayout>
-                    <Button
-                        android:id="@+id/notice_bird_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/bird"
-                        android:minHeight="80dp"
-                        android:src="@drawable/suit"
-                        android:text="       Bird             "
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/main_button"
-                        android:textColor="@android:color/black"/>
-
-                    <ImageButton
-                        android:id="@+id/star5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/star"
-                        android:layout_toRightOf="@id/notice_bird_button"
-                        android:background="#88888888"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout>
-
-                    <Button
-                        android:id="@+id/notice_fish_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:minHeight="80dp"
-                        android:drawableLeft="@drawable/fish"
-                        android:text="       Fish          "
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/main_button"
-                        android:textColor="@android:color/black"/>
-
-                    <ImageButton
-                        android:id="@+id/star6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/star"
-                        android:layout_toRightOf="@id/notice_fish_button"
-                        android:background="#88888888"/>
-                </RelativeLayout>
-            </TableRow>
-
-            <TableRow>
-                <RelativeLayout>
-                    <Button
-                        android:id="@+id/notice_dog_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/dog"
-                        android:minHeight="80dp"
-                        android:text="      Dog               "
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/main_button"
-                        android:textColor="@android:color/black"/>
-
-                    <ImageButton
-                        android:id="@+id/star7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/star"
-                        android:layout_toRightOf="@id/notice_dog_button"
-                        android:background="#88888888"/>
-                </RelativeLayout>
-
-                <RelativeLayout>
-                    <Button
-                        android:id="@+id/notice_rabbit_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:minHeight="80dp"
-                        android:drawableLeft="@drawable/rabbit"
-                        android:text="      Rabbit      "
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/main_button"
-                        android:textColor="@android:color/black"/>
-
-                    <ImageButton
-                        android:id="@+id/star8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/star"
-                        android:layout_toRightOf="@id/notice_rabbit_button"
-                        android:background="#88888888"/>
-
-                </RelativeLayout>
-            </TableRow>
-
-            <TableRow>
-                <RelativeLayout>
-                    <Button
-                        android:id="@+id/notice_home_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/home"
-                        android:minHeight="80dp"
-                        android:src="@drawable/suit"
-                        android:text="Small House  "
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/main_button"
-                        android:textColor="@android:color/black"/>
-
-                    <ImageButton
-                        android:id="@+id/star9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/star"
-                        android:layout_toRightOf="@id/notice_home_button"
-                        android:background="#88888888"/>
-                </RelativeLayout>
-
-                <RelativeLayout>
-                    <Button
-                        android:id="@+id/notice_house_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:minHeight="80dp"
-                        android:drawableLeft="@drawable/house"
-                        android:text="  Big House   "
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/main_button"
-                        android:textColor="@android:color/black"/>
-
-                    <ImageButton
-                        android:id="@+id/star10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/star"
-                        android:layout_toRightOf="@id/notice_house_button"
-                        android:background="#88888888"/>
-
-                </RelativeLayout>
-            </TableRow>
+                <Button
+                    android:id="@+id/view_button1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.7"
+                    android:text="Preview"
+                    android:textColor="@color/colorDark"
+                    android:background="@drawable/button5"/>
 
 
-        </TableLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
     </ScrollView>
-
 
 </LinearLayout>

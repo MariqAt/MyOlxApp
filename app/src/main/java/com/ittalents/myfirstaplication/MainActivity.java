@@ -1,8 +1,8 @@
 package com.ittalents.myfirstaplication;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +13,6 @@ import com.ittalents.myfirstaplication.model.RegularUser;
 import com.ittalents.myfirstaplication.model.User;
 
 import java.util.ArrayList;
-import java.util.TreeSet;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,16 +22,27 @@ public class MainActivity extends AppCompatActivity {
     private Button loginButton;
     private Button createAccountButton;
 
-    public static User loggedUser = null;
+    public static ArrayList<RegularUser.Notice> allNotices = new ArrayList<>();
+    public static User loggedUser;
+    public static RegularUser loggedRegularUser;
 
     static {
-        OLX.regUser(RegularUser.createUser("Mariq", "sf", "mimi@abv.bg", "Mimi1234", "08888888888"));
-        OLX.regUser(RegularUser.createUser("Ivan", "sf", "vanka@abv.bg", "Vanka1234", "08888888889"));
+        RegularUser mimi = RegularUser.createUser("Mariq", "sf", "mimi@abv.bg", "Mimi1234", "08888888888");
+        OLX.regUser(mimi);
+
+        //RegularUser.Notice noticeM1 = mimi.new Notice("Balna Roklq", RegularUser.Category.FASHION, RegularUser.Type.PRIVATE, 100, "size: M", RegularUser.StateGood.NEW);
+        //mimi.addNotice(noticeM1);
+        //allNotices.add(noticeM1);
+
+        RegularUser vanka = RegularUser.createUser("Ivan", "sf", "vanka@abv.bg", "Vanka1234", "08888888889");
+        OLX.regUser(vanka);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         email = (EditText) this.findViewById(R.id.email_text);
         password = (EditText) this.findViewById(R.id.password_text);

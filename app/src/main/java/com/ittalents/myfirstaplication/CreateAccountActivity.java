@@ -40,13 +40,13 @@ public class CreateAccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (isValidDate()) {
-                    MainActivity.loggedUser = RegularUser.createUser(registName.getText().toString(), registAddress.getText().toString(),
+                    MainActivity.loggedRegularUser = RegularUser.createUser(registName.getText().toString(), registAddress.getText().toString(),
                             registEmail.getText().toString(), registPassword.getText().toString(), registGsm.getText().toString());
-                    OLX.regularUsers.add((RegularUser) MainActivity.loggedUser);
+                    OLX.loggedRegularUsers.add((RegularUser) MainActivity.loggedUser);
                     Toast.makeText(CreateAccountActivity.this, "You are logged successfull", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent();
-                    intent.putExtra("email", MainActivity.loggedUser.getMail());
-                    intent.putExtra("pass", MainActivity.loggedUser.getPassword());
+                    intent.putExtra("email", MainActivity.loggedRegularUser.getMail());
+                    intent.putExtra("pass", MainActivity.loggedRegularUser.getPassword());
                     setResult(RESULT_CODE_SUCCESS, intent);
                     finish();
                 } else {

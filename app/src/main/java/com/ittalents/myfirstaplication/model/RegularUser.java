@@ -60,6 +60,9 @@ public  class RegularUser extends User {
 
     public void addNotice(Notice n) {
         Admin.getCreatedInstance().pendingAds.add(n);
+
+        poster.get(SortNotice.ACTIVE).add(n);
+        //OLX.getInstance().addNoticeOLX(n);
     }
 
     public void deleteNotice(RegularUser.Notice n) {
@@ -165,18 +168,19 @@ public  class RegularUser extends User {
         private String name;
         private Date date;
         private int id;
-        // picture
+        private int pictureID;
 
 
         public Notice(String title, Category category, Type type, int price, String description,
                       StateGood state) {
-            this.user = (RegularUser) MainActivity.loggedUser;
+            this.user = (RegularUser) MainActivity.loggedRegularUser;
             setTitle(title);
             this.category = category;
             this.type = type;
             setPrice(price);
             setDescription(description);
             setState(state);
+            //this.pictureID = pictureID;
             this.mail = MainActivity.loggedUser.getMail();
             this.gsm = MainActivity.loggedUser.getGsm();
             this.name = MainActivity.loggedUser.getName();
@@ -210,6 +214,10 @@ public  class RegularUser extends User {
 
         public int getPrice() {
             return price;
+        }
+
+        public int getPictureID() {
+            return pictureID;
         }
 
         public String getDescription() {

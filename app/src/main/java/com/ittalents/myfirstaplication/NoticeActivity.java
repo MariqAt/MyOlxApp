@@ -1,7 +1,7 @@
 package com.ittalents.myfirstaplication;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -9,9 +9,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.ittalents.myfirstaplication.model.Admin;
 import com.ittalents.myfirstaplication.model.RegularUser;
-import com.ittalents.myfirstaplication.model.RegularUser.Notice;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +23,6 @@ public class NoticeActivity extends AppCompatActivity {
     private EditText price;
     private EditText description;
     private Spinner state;
-
     private Button add;
 
     private String adTitle;

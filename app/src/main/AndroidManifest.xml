@@ -3,6 +3,7 @@
     package="com.ittalents.myfirstaplication">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/olx"
@@ -26,7 +27,8 @@
         <activity android:name=".OLXActivity" />
         <activity android:name=".MyHomeActivity" />
         <activity android:name=".NoticeActivity" />
-        <activity android:name=".SearchesActivity"></activity>
+        <activity android:name=".SearchesActivity" />
+        <activity android:name=".ViewNoticeActivity"></activity>
     </application>
 
 </manifest>

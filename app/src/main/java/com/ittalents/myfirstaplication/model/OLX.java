@@ -14,8 +14,6 @@ public class OLX {
 
 
     public static TreeSet<RegularUser> regularUsers;
-    // mail -> password -> user
-    // HashMap<String, TreeSet<RegularUser>> regularUsers;
 
     public static TreeSet<RegularUser> loggedRegularUsers;
 
@@ -37,6 +35,17 @@ public class OLX {
     public static void regUser(RegularUser user) {
         regularUsers.add(user);
     }
+
+
+  /*
+    public static void addNoticeOLX(RegularUser.Notice notice) {
+        if (!ads.containsKey(notice.getCategory())) {
+            ads.put(notice.getCategory(), new ArrayList<RegularUser.Notice>());
+        }
+        ads.get(notice.getCategory()).add(notice);
+    }
+   */
+
 
     public boolean logInUser(String mail, String password) {
         for (RegularUser regularUser : regularUsers) {

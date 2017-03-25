@@ -1,37 +1,57 @@
 package com.ittalents.myfirstaplication;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.ittalents.myfirstaplication.model.OLX;
 import com.ittalents.myfirstaplication.model.RegularUser;
-
-import java.util.ArrayList;
 
 public class OLXActivity extends AppCompatActivity {
 
-    private Button notice1;
+    private ImageView image1;
+    private TextView title1;
+    private TextView description1;
+    private TextView price1;
+    private Button viewButton1;
     private ImageButton star1;
-
+    private HorizontalScrollView scView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_olx);
 
+        image1 = (ImageView) findViewById(R.id.image_notice1);
+        title1 = (TextView) findViewById(R.id.title_notice1);
+        description1 = (TextView) findViewById(R.id.desc_notice1);
+        price1 = (TextView) findViewById(R.id.price_notice1);
+        viewButton1 = (Button) findViewById(R.id.view_button1);
+        star1 = (ImageButton) findViewById(R.id.button_star1);
 
-        for (ArrayList<RegularUser.Notice> notice : OLX.ads.values()) {
-            if (notice != null) {
+        image1.setImageResource(R.drawable.dress1);
+        title1.setText("Бална Рокля");
+        description1.setText("Размер: универсален; Цвят: син; Плат: еластант");
+        price1.setText("500 лв");
 
+
+        viewButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OLXActivity.this, ViewNoticeActivity.class);
+
+                startActivity(intent);
             }
-        }
+        });
+
     }
     public void showPopup(View v) {
         final PopupMenu popup = new PopupMenu(this, v);
