@@ -69,6 +69,13 @@ public class OLXActivity extends AppCompatActivity {
                 }
             });
 
+            star1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MainActivity.loggedRegularUser.viewNotice(n);
+                }
+            });
+
         }
 
         if (MainActivity.allNotices.get(1) != null) {
@@ -84,6 +91,13 @@ public class OLXActivity extends AppCompatActivity {
                     Intent intent = new Intent(OLXActivity.this, AdActivity.class);
                     intent.putExtra("notice", n);
                     startActivity(intent);
+                }
+            });
+
+            star2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MainActivity.loggedRegularUser.viewNotice(n);
                 }
             });
         }
