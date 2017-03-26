@@ -1,7 +1,7 @@
 package com.ittalents.myfirstaplication;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.ittalents.myfirstaplication.model.Message;
 import com.ittalents.myfirstaplication.model.User;
-import com.ittalents.myfirstaplication.model.OLX;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,8 +37,8 @@ public class CorrespondenceActivity extends AppCompatActivity {
         send = (Button) findViewById(R.id.button_send);
 
         List<String> spinnerArray = new ArrayList<String>();
-        if(!MainActivity.loggedUser.messages.isEmpty()) {
-            for (User user : MainActivity.loggedUser.messages.keySet()) {
+        if(!MainActivity.loggedRegularUser.messages.isEmpty()) {
+            for (User user : MainActivity.loggedRegularUser.messages.keySet()) {
                 spinnerArray.add(user.getName());
             }
 
@@ -55,7 +54,7 @@ public class CorrespondenceActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     String text = messagedUsers.getSelectedItem().toString();
                     StringBuilder history = new StringBuilder("");
-                    for (User user : MainActivity.loggedUser.messages.keySet()) {
+                    for (User user : MainActivity.loggedRegularUser.messages.keySet()) {
                         if (user.getName().equals(text)) {
                             for (Message m : MainActivity.loggedUser.messages.get(user)) {
                                 history.append(m.toString());

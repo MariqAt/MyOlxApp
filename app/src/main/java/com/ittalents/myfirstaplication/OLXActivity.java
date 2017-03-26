@@ -1,21 +1,17 @@
 package com.ittalents.myfirstaplication;
 
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.PopupMenu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
-import com.ittalents.myfirstaplication.model.RegularUser;
+import com.ittalents.myfirstaplication.model.OLXAdapter;
 
-public class OLXActivity extends AppCompatActivity {
+public class OLXActivity extends Activity {
 
     private ImageView image1;
     private TextView title1;
@@ -39,7 +35,14 @@ public class OLXActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_olx);
 
-        image1 = (ImageView) findViewById(R.id.image_notice1);
+
+        ListView listView = (ListView) findViewById(R.id.android_list_main);
+        OLXAdapter adapter = new OLXAdapter(this, R.layout.olx_layout, MainActivity.allNotices);
+        listView.setAdapter(adapter);
+
+
+        /*
+         image1 = (ImageView) findViewById(R.id.image_notice1);
         title1 = (TextView) findViewById(R.id.title_notice1);
         description1 = (TextView) findViewById(R.id.desc_notice1);
         price1 = (TextView) findViewById(R.id.price_notice1);
@@ -144,6 +147,14 @@ public class OLXActivity extends AppCompatActivity {
                 this.startActivity(intent6);
                 break;
         }
+    }
+
+         */
+
+
+
+
+
     }
 
 }

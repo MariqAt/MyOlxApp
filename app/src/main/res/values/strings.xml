@@ -25,9 +25,8 @@
     <string-array name="ownerType_arrays">
         <item>PRIVATE</item>
         <item>BUSINESS</item>
-
-
     </string-array>
+
     <string name="state_prompt">NEW</string>
     <string name="name_app">MyOlx</string>
     <string name="add_notice">Add notice</string>
@@ -39,8 +38,11 @@
     <string name="useful_contact">Useful Contact</string>
     <string name="contact_us">Contact Us</string>
     <string name="cancel">cancel</string>
+
     <string-array name="state_arrays">
         <item>NEW</item>
         <item>USED</item>
     </string-array>
+
+
 </resources>

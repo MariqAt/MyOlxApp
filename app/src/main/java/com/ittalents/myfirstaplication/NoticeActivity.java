@@ -12,10 +12,14 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.ittalents.myfirstaplication.model.ImageArrayAdapter;
 import com.ittalents.myfirstaplication.model.RegularUser;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.R.layout;
+import static com.ittalents.myfirstaplication.R.drawable.home;
 
 
 public class NoticeActivity extends AppCompatActivity {
@@ -35,6 +39,11 @@ public class NoticeActivity extends AppCompatActivity {
     private int adPrice;
     private String adDescription;
     private RegularUser.StateGood adState;
+
+    private static Integer[] imageIcon = { R.drawable.dress1, R.drawable.dress2,
+    home, R.drawable.house, R.drawable.bird, R.drawable.rabbit, R.drawable.fish,
+    R.drawable.suit, R.drawable.dog, R.drawable.tshirt};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +66,9 @@ public class NoticeActivity extends AppCompatActivity {
         spinnerArray1.add(RegularUser.Category.FASHION);
         spinnerArray1.add(RegularUser.Category.ELECTRONICS);
         ArrayAdapter<RegularUser.Category> adapter1 = new ArrayAdapter<>(
-                this, android.R.layout.simple_spinner_item, spinnerArray1);
+                this, layout.simple_spinner_item, spinnerArray1);
 
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter1.setDropDownViewResource(layout.simple_spinner_dropdown_item);
 
         category.setAdapter(adapter1);
 
@@ -85,9 +94,9 @@ public class NoticeActivity extends AppCompatActivity {
 
 
         ArrayAdapter<RegularUser.Type> adapter2 = new ArrayAdapter<>(
-                this, android.R.layout.simple_spinner_item, spinnerArray2);
+                this, layout.simple_spinner_item, spinnerArray2);
 
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter2.setDropDownViewResource(layout.simple_spinner_dropdown_item);
 
         type.setAdapter(adapter2);
 
@@ -105,15 +114,16 @@ public class NoticeActivity extends AppCompatActivity {
 
         });
 
+
         List<RegularUser.StateGood> spinnerArray3 = new ArrayList<>();
         spinnerArray3.add(RegularUser.StateGood.NEW);
         spinnerArray3.add(RegularUser.StateGood.USED);
 
 
         ArrayAdapter<RegularUser.StateGood> adapter3 = new ArrayAdapter<>(
-                this, android.R.layout.simple_spinner_item, spinnerArray3);
+                this, layout.simple_spinner_item, spinnerArray3);
 
-        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter3.setDropDownViewResource(layout.simple_spinner_dropdown_item);
 
         state.setAdapter(adapter3);
 
@@ -162,7 +172,16 @@ public class NoticeActivity extends AppCompatActivity {
 
             }
         });
+
+        Spinner spinner4 = (Spinner) findViewById(R.id.spinner4);
+        ImageArrayAdapter adapter4 = new ImageArrayAdapter(this, imageIcon);
+
+        //spinner4.setAdapter(adapter4);
+
     }
+
+
+
 
     public boolean isNumber(String s){
         boolean itIsNumber = true;
