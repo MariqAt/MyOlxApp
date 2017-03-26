@@ -39,15 +39,19 @@ public class CreateAccountActivity extends AppCompatActivity {
         registButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (isValidDate()) {
-                    MainActivity.loggedRegularUser = RegularUser.createUser(registName.getText().toString(), registAddress.getText().toString(),
+                    RegularUser ru = RegularUser.createUser(registName.getText().toString(), registAddress.getText().toString(),
                             registEmail.getText().toString(), registPassword.getText().toString(), registGsm.getText().toString());
 
-                    OLX.loggedRegularUsers.add((RegularUser) MainActivity.loggedRegularUser);
-                    Toast.makeText(CreateAccountActivity.this, "You are logged successfull", Toast.LENGTH_SHORT).show();
+                    OLX.loggedRegularUsers.add((RegularUser) ru);
+                    Toast.makeText(CreateAccountActivity.this, "You have registered successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent();
-                    intent.putExtra("email", MainActivity.loggedRegularUser.getMail());
-                    intent.putExtra("pass", MainActivity.loggedRegularUser.getPassword());
+                    Bundle b = new Bundle();
+                    b.putString("email", ru.getMail());
+                    b.putString("pass", ru.getPassword());
+                    b.putSerializable("user", ru);
+                    intent.putExtras(b);
                     setResult(RESULT_CODE_SUCCESS, intent);
                     finish();
                 } else {

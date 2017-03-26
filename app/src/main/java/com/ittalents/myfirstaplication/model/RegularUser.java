@@ -63,6 +63,7 @@ public  class RegularUser extends User {
 
         poster.get(SortNotice.ACTIVE).add(n);
         OLX.getInstance().addNoticeOLX(n);
+        MainActivity.allNotices.add(n);
     }
 
     public void deleteNotice(RegularUser.Notice n) {
@@ -172,7 +173,7 @@ public  class RegularUser extends User {
 
 
         public Notice(String title, Category category, Type type, int price, String description,
-                      StateGood state, int pictureID) {
+                      StateGood state) {
             this.user = (RegularUser) MainActivity.loggedRegularUser;
             setTitle(title);
             this.category = category;
@@ -213,7 +214,7 @@ public  class RegularUser extends User {
         }
 
         public int getPrice() {
-            return price;
+            return this.price;
         }
 
         public int getPictureID() {

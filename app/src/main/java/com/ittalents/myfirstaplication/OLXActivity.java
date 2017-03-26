@@ -53,12 +53,12 @@ public class OLXActivity extends AppCompatActivity {
         viewButton2 = (Button) findViewById(R.id.view_button2);
         star2 = (ImageButton) findViewById(R.id.button_star2);
 
-        if (MainActivity.allNotices.get(0) != null) {
+        if (MainActivity.allNotices.size() > 0 && MainActivity.allNotices.get(0) != null) {
             final RegularUser.Notice n = MainActivity.allNotices.get(0);
             image1.setImageResource(n.getPictureID());
             title1.setText(n.getTitle());
             description1.setText(n.getDescription());
-            price1.setText(n.getPrice()+"");
+            price1.setText(Integer.toString(n.getPrice()));
 
             viewButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -78,12 +78,12 @@ public class OLXActivity extends AppCompatActivity {
 
         }
 
-        if (MainActivity.allNotices.get(1) != null) {
+        if (MainActivity.allNotices.size() > 1 && MainActivity.allNotices.get(1) != null) {
             final RegularUser.Notice n = MainActivity.allNotices.get(1);
             image2.setImageResource(n.getPictureID());
             title2.setText(n.getTitle());
             description2.setText(n.getDescription());
-            price2.setText(n.getPrice()+"");
+            price2.setText(Integer.toString(n.getPrice()));
 
             viewButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
