@@ -63,6 +63,7 @@ public  class RegularUser extends User {
 
         poster.get(SortNotice.ACTIVE).add(n);
         OLX.getInstance().addNoticeOLX(n);
+        MainActivity.allNotices.add(n);
     }
 
     public void deleteNotice(RegularUser.Notice n) {
