@@ -62,14 +62,14 @@ public class ActiveNoticeActivity extends AppCompatActivity {
 
                         title = null;
                         description = null;
-
+                        RegularUser.Notice notice = null;
                         for (RegularUser.Notice n : ru.poster.get(RegularUser.SortNotice.ACTIVE)) {
                             if (n.getTitle().equals(text)) {
                                 price = n.getPrice();
                                 gsm = n.getGsm();
                                 title = n.getTitle();
                                 description = n.getDescription();
-
+                                notice = n;
                                 break;
                             }
                         }
@@ -77,6 +77,7 @@ public class ActiveNoticeActivity extends AppCompatActivity {
 
                         Intent i = new Intent(ActiveNoticeActivity.this, AdActivity.class);
                         Bundle b = new Bundle();
+                        b.putSerializable("notice", notice);
                         b.putInt("PRICE", price);
                         b.putString("GSM", gsm);
 

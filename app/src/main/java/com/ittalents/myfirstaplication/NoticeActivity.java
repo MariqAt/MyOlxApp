@@ -140,8 +140,15 @@ public class NoticeActivity extends AppCompatActivity {
                     adPrice = Integer.parseInt(price.getText().toString());
                     adDescription = description.getText().toString();
 
-                    RegularUser.Notice n = MainActivity.loggedRegularUser.new Notice(adTitle, adCategory, adType, adPrice, adDescription, adState, Integer.parseInt(picture.toString()));
-                    MainActivity.loggedRegularUser.addNotice(n);
+                    RegularUser.Notice n = null;
+
+
+
+                         n = MainActivity.loggedRegularUser.new Notice(adTitle, adCategory, adType, adPrice, adDescription, adState);
+
+
+
+                        MainActivity.loggedRegularUser.addNotice(n);
 
                     Intent intent = new Intent(NoticeActivity.this, MyHomeActivity.class);
                     Bundle bagaj = new Bundle();

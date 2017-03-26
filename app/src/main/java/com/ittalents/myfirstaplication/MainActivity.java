@@ -26,20 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static RegularUser loggedRegularUser;
     public static User loggedUser;
-    static {
-        RegularUser mimi = RegularUser.createUser("Mariq", "sf", "mimi@abv.bg", "Mimi1234", "08888888888");
-        OLX.regUser(mimi);
-        loggedRegularUser = mimi;
-        RegularUser.Notice noticeM1 = mimi.new Notice("Бална Рокля", RegularUser.Category.FASHION, RegularUser.Type.PRIVATE, 500, "Размер: универсален; Цвят: син; Плат: еластант", RegularUser.StateGood.NEW, R.drawable.dress1);
-        RegularUser.Notice noticeM2 = mimi.new Notice("Парти Рокля", RegularUser.Category.FASHION, RegularUser.Type.PRIVATE, 350, "Размер: M; Цвят: червен; Плат: коприна", RegularUser.StateGood.NEW, R.drawable.dress2);
-        mimi.addNotice(noticeM1);
-        allNotices.add(noticeM1);
-        mimi.addNotice(noticeM2);
-        allNotices.add(noticeM2);
 
-        RegularUser vanka = RegularUser.createUser("Ivan", "sf", "vanka@abv.bg", "Vanka1234", "08888888889");
-        OLX.regUser(vanka);
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,8 +80,9 @@ public class MainActivity extends AppCompatActivity {
             }
             if (resultCode == CreateAccountActivity.RESULT_CODE_SUCCESS) {
                 if (data != null) {
-                    email.setText(data.getStringExtra("email"));
-                    password.setText(data.getStringExtra("pass"));
+                    email.setText(data.getExtras().getString("email"));
+                    password.setText(data.getExtras().getString("pass"));
+                    loggedRegularUser = (RegularUser) data.getExtras().getSerializable("user");
                 }
             }
     }

@@ -35,8 +35,8 @@ public class AdActivity extends AppCompatActivity {
 
         RegularUser.Notice n = (RegularUser.Notice) getIntent().getExtras().getSerializable("notice");
 
-        image.setImageResource(n.getPictureID());
-        priceView.setText(n.getPrice()+"");
+
+        priceView.setText(Integer.toString(n.getPrice()));
         gsm.setText(n.getGsm());
         titleView.setText(n.getTitle());
         descriptionView.setText(n.getDescription());
