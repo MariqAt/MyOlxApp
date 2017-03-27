@@ -28,91 +28,192 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
+            
             <ImageView
                 android:id="@+id/image_view"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:adjustViewBounds="false"
                 android:cropToPadding="false"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button4"
                 android:src="@drawable/ad" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="0.8"
+                android:text="Title:"
+                android:textColor="@color/colorDark"
+                android:textSize="20sp"
+                android:textStyle="italic" />
 
             <TextView
                 android:id="@+id/ad_title"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="italic"
                 android:background="@drawable/button1"
-                android:hint="Text"
-                android:textColor="@color/colorDark" />
+                android:hint="Title"
+                android:textColor="@color/colorDark"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.8"
+                android:text="Price:"
+                android:textStyle="italic"
+                android:textColor="@color/colorDark"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"/>
 
             <TextView
                 android:id="@+id/ad_price"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="italic"
                 android:background="@drawable/button1"
                 android:hint="Price"
                 android:textColor="@color/colorDark" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.8"
+                android:text="Description:"
+                android:textStyle="italic"
+                android:textColor="@color/colorDark"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
                 android:id="@+id/ad_description"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="italic"
                 android:background="@drawable/button1"
                 android:hint="Description"
                 android:textColor="@color/colorDark" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.8"
+                android:text="Seller:"
+                android:textStyle="italic"
+                android:textColor="@color/colorDark"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"/>
+
+
+            <TextView
                 android:id="@+id/ad_seller_name"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="italic"
                 android:background="@drawable/button1"
                 android:hint="Seller"
                 android:textColor="@color/colorDark" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.8"
+                android:text="Contact info:"
+                android:textStyle="italic"
+                android:textColor="@color/colorDark"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
                 android:id="@+id/ad_contact_info"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:textStyle="italic"
+                android:textSize="20sp"
                 android:background="@drawable/button1"
                 android:hint="Contact Info"
                 android:textColor="@color/colorDark" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.8"
+                android:text="E-mail:"
+                android:textStyle="italic"
+                android:textColor="@color/colorDark"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"/>
 
             <TextView
                 android:id="@+id/ad_mail"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="italic"
                 android:background="@drawable/button1"
                 android:hint="E-mail"
                 android:textColor="@color/colorDark" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.8"
+                android:text="Data:"
+                android:textStyle="italic"
+                android:textColor="@color/colorDark"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"/>
 
             <TextView
                 android:id="@+id/ad_data"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:textStyle="italic"
+                android:textSize="20sp"
                 android:background="@drawable/button1"
                 android:hint="Data"
                 android:textColor="@color/colorDark" />

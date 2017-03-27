@@ -173,7 +173,7 @@ public  class RegularUser extends User {
 
 
         public Notice(String title, Category category, Type type, int price, String description,
-                      StateGood state) {
+                      StateGood state, int pictureID) {
             this.user = (RegularUser) MainActivity.loggedRegularUser;
             setTitle(title);
             this.category = category;

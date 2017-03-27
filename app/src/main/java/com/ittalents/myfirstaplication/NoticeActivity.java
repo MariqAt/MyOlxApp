@@ -8,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -30,8 +29,8 @@ public class NoticeActivity extends AppCompatActivity {
     private EditText price;
     private EditText description;
     private Spinner state;
-    private ImageView picture;
-    private Button add;
+    private Button addButton;
+    private Button previewButton;
 
     private String adTitle;
     private RegularUser.Category adCategory;
@@ -39,7 +38,9 @@ public class NoticeActivity extends AppCompatActivity {
     private int adPrice;
     private String adDescription;
     private RegularUser.StateGood adState;
+    private int imageId;
 
+    private Spinner imageSpinner;
     private static Integer[] imageIcon = { R.drawable.dress1, R.drawable.dress2,
     home, R.drawable.house, R.drawable.bird, R.drawable.rabbit, R.drawable.fish,
     R.drawable.suit, R.drawable.dog, R.drawable.tshirt};
@@ -56,9 +57,26 @@ public class NoticeActivity extends AppCompatActivity {
         price = (EditText) findViewById(R.id.price);
         description = (EditText) findViewById(R.id.description);
         state = (Spinner) findViewById(R.id.state);
-        picture = (ImageView) findViewById(R.id.view_picture1);
 
-        add = (Button) findViewById(R.id.add);
+
+        addButton = (Button) findViewById(R.id.add);
+        previewButton = (Button) findViewById(R.id.notice_preview_button);
+
+        imageSpinner = (Spinner) findViewById(R.id.spinner4);
+        ImageArrayAdapter adapter4 = new ImageArrayAdapter(this, imageIcon);
+        imageSpinner.setAdapter(adapter4);
+
+        imageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                imageId =  (int) imageSpinner.getSelectedItem();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         List<RegularUser.Category> spinnerArray1 = new ArrayList<>();
         spinnerArray1.add(RegularUser.Category.ESTATES);
@@ -74,13 +92,10 @@ public class NoticeActivity extends AppCompatActivity {
 
         category.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
-
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 
                     adCategory =  (RegularUser.Category) category.getSelectedItem();
-
-
             }
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
@@ -140,26 +155,23 @@ public class NoticeActivity extends AppCompatActivity {
 
         });
 
-        add.setOnClickListener(new View.OnClickListener() {
+        addButton.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
-                if (isNumber(price.getText().toString()) && adCategory != null && adType != null && adState != null && !title.getText().toString().isEmpty() && price.getText() != null && !description.getText().toString().isEmpty()) {
+                if (dataValid()) {
                     adTitle = title.getText().toString();
                     adPrice = Integer.parseInt(price.getText().toString());
                     adDescription = description.getText().toString();
 
                     RegularUser.Notice n = null;
 
+                    n = MainActivity.loggedRegularUser.new Notice(adTitle, adCategory, adType, adPrice, adDescription, adState, imageId);
 
+                    MainActivity.loggedRegularUser.addNotice(n);
 
-                         n = MainActivity.loggedRegularUser.new Notice(adTitle, adCategory, adType, adPrice, adDescription, adState);
-
-
-
-                        MainActivity.loggedRegularUser.addNotice(n);
-
+                        //????
                     Intent intent = new Intent(NoticeActivity.this, MyHomeActivity.class);
                     Bundle bagaj = new Bundle();
                     bagaj.putSerializable("user", MainActivity.loggedRegularUser);
@@ -169,33 +181,60 @@ public class NoticeActivity extends AppCompatActivity {
                     Toast.makeText(NoticeActivity.this, "Incorrect data", Toast.LENGTH_SHORT).show();
                 }
 
+            }
+        });
+
+        previewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (dataValid()) {
+                    Intent intent = new Intent(NoticeActivity.this, AdActivity.class);
+                    RegularUser.Notice n = MainActivity.loggedRegularUser.new Notice(title.getText().toString(),
+                            adCategory, adType, Integer.parseInt(price.getText().toString()),
+                            description.getText().toString(), adState, imageId);
+                    intent.putExtra("notice", n);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(NoticeActivity.this, "Data are not valid!", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
 
-        Spinner spinner4 = (Spinner) findViewById(R.id.spinner4);
-        ImageArrayAdapter adapter4 = new ImageArrayAdapter(this, imageIcon);
-
-        //spinner4.setAdapter(adapter4);
-
     }
 
-
-
-
-    public boolean isNumber(String s){
-        boolean itIsNumber = true;
-        String p = null;
-        for (int idx = 0; idx <= s.length() - 1; idx++){
-            if(s.charAt(idx) < '0' || s.charAt(idx) > '9'){
-                itIsNumber = false;
-               p = Integer.toString(idx);
-                break;
-            }
+    private boolean dataValid() {
+        boolean isValid = true;
+        String title1 = title.getText().toString();
+        if (title1.isEmpty()) {
+            isValid = false;
+            title.requestFocus();
+            title.setError("Title must be not empty!");
         }
-        if (itIsNumber){
-            Toast.makeText(NoticeActivity.this, price.getText().toString(), Toast.LENGTH_SHORT).show();
+        String price1 = price.getText().toString();
+        if (price1.isEmpty()) {
+            isValid = false;
+            price.requestFocus();
+            price.setError("Price must be not empty");
         }
-        return itIsNumber;
+        String descr = description.getText().toString();
+        if (descr.isEmpty()) {
+            isValid = false;
+            description.requestFocus();
+            description.setError("Description ,ust be not empty!");
+        }
+        if (adCategory == null) {
+            isValid = false;
+            Toast.makeText(this, "You have to choose category of notice", Toast.LENGTH_SHORT).show();
+        }
+        if (adType == null) {
+            Toast.makeText(this, "You have to choose type of notice", Toast.LENGTH_SHORT).show();
+        }
+        if (adState == null) {
+            Toast.makeText(this, "You have to choose state of notice", Toast.LENGTH_SHORT).show();
+        }
+        return isValid;
     }
+
 }

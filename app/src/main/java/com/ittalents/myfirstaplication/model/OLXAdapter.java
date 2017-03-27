@@ -38,6 +38,7 @@ public class OLXAdapter extends ArrayAdapter<RegularUser.Notice> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = ((Activity)context).getLayoutInflater();
         View row = inflater.inflate(layoutID, parent, false);
+
         ImageView imageView = (ImageView) row.findViewById(R.id.notice_row_image);
         imageView.setImageResource(noticeList.get(position).getPictureID());
 
@@ -45,7 +46,7 @@ public class OLXAdapter extends ArrayAdapter<RegularUser.Notice> {
         titleView.setText(noticeList.get(position).getTitle());
 
         TextView priceView = (TextView) row.findViewById(R.id.notice_row_price);
-        priceView.setText(noticeList.get(position).getPrice()+"");
+        priceView.setText(noticeList.get(position).getPrice()+" лв");
 
         return row;
     }

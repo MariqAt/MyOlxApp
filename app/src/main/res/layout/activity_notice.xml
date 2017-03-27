@@ -12,7 +12,6 @@
         android:textSize = "25sp"
         android:gravity = "center"
         android:background="@color/colorAccent"
-
         android:textStyle="italic"
         android:textColor="@color/colorPrimaryDark"
         />
@@ -21,12 +20,13 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Title"
-
+        android:hint="Title"
         android:drawableBottom="@color/colorAccent"
         android:textStyle="italic"
-        android:textColor="@color/colorPrimary"
-        android:layout_marginLeft="5dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
+        android:textColor="@color/colorDark"
+        android:layout_marginLeft="25dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"/>
@@ -35,27 +35,37 @@
         android:id="@+id/category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
         android:entries="@array/category_arrays"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/button6"
         android:prompt="@string/category_prompt" />
 
     <Spinner
         android:id="@+id/type"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button6"
         android:entries="@array/ownerType_arrays"
-        android:background="@color/colorPrimary"
         android:prompt="@string/ownerType_prompt" />
 
     <EditText
         android:id="@+id/price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Price"
+        android:hint="Price"
         android:maxLength="20"
         android:textStyle="italic"
-        android:textColor="@color/colorPrimary"
-        android:layout_marginLeft="5dp"
+        android:textColor="@color/colorDark"
+        android:backgroundTint="@color/colorPrimary"
+        android:inputType="number"
+        android:textColorHint="@color/colorPrimary"
+        android:layout_marginLeft="25dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp"/>
@@ -65,36 +75,45 @@
         android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Description"
-        android:textStyle="italic"
-        android:textColor="@color/colorPrimary"
-        android:layout_marginLeft="5dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="25dp" />
+        android:backgroundTint="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
+        android:hint="Description"
+        android:textColor="@color/colorDark"
+        android:textStyle="italic" />
+
     <Spinner
         android:id="@+id/state"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/state_arrays"
-        android:background="@color/colorPrimary"
+        android:textColorHint="@color/colorDark"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/button6"
         android:prompt="@string/state_prompt" />
 
-    <ImageView
-        android:id="@+id/view_picture1"
-        android:layout_width="match_parent"
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/colorDark"></Spinner>
 
     <Button
-        android:id="@+id/preview"
+        android:id="@+id/notice_preview_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryDark"
         android:text="PREVIEW"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/button3"
         android:layout_margin="30dp"/>
 
     <Button
@@ -105,7 +124,7 @@
         android:text="ADD"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/button3"
         android:layout_margin="30dp"/>
 
 </LinearLayout>
