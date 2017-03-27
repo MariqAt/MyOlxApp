@@ -38,6 +38,7 @@ public class AdActivity extends AppCompatActivity {
 
         priceView.setText(Integer.toString(n.getPrice()));
         gsm.setText(n.getGsm());
+
         titleView.setText(n.getTitle());
         descriptionView.setText(n.getDescription());
         sellerNameView.setText(n.getName());
