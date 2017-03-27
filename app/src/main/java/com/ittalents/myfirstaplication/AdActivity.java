@@ -38,6 +38,7 @@ public class AdActivity extends AppCompatActivity {
         image.setImageResource(n.getPictureID());
         priceView.setText(n.getPrice() + " лв");
         gsm.setText(n.getGsm());
+
         titleView.setText(n.getTitle());
         descriptionView.setText(n.getDescription());
         sellerNameView.setText(n.getName());
